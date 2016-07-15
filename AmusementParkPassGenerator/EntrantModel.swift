@@ -6,6 +6,7 @@
 //  Copyright © 2016 Christopher Bonuel. All rights reserved.
 //
 
+
 import Foundation
 
 
@@ -134,18 +135,15 @@ protocol BirthdayWishable {
 
 // MARK: Is-A Protocols
 
-protocol EntrantType {
+protocol EntrantType: AmusementAreaAccessible {
 }
 
-protocol GuestType: EntrantType {
+protocol GuestType: EntrantType, AllRidesAcesssible {
 }
 
-protocol ManagerType: EntrantType {
+protocol EmployeeType: EntrantType, Nameable, Addressable {
 }
 
-protocol EmployeeType: EntrantType {
-}
-
-protocol VendorType: EntrantType {
+protocol FullTimeEmployeeType: EmployeeType, FoodDiscountAccessible, MerchandiseDiscountAccessible, AllRidesAcesssible {
 }
 
