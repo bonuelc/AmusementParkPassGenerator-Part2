@@ -29,6 +29,17 @@ protocol MaintenanceAreaAccessible: AreaAccessible {
 protocol OfficeAreaAccessible: AreaAccessible {
 }
 
+// MARK: Ride Acessible Protocols
+
+protocol RideAccessible {
+}
+
+protocol AllRidesAcesssible: RideAccessible {
+}
+
+protocol SkipAllRideLinesAcessible: RideAccessible {
+}
+
 // MARK: Is-A Protocols
 
 protocol EntrantType {
