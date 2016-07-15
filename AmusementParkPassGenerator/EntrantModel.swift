@@ -6,6 +6,23 @@
 //  Copyright © 2016 Christopher Bonuel. All rights reserved.
 //
 
+import Foundation
+
+
+// MARK: Wrapper Structs
+
+struct FullName {
+    let firstName: String
+    let lastName: String
+}
+
+struct FullAddress {
+    let streetAddress: String
+    let city: String
+    let state: String
+    let zipCode: Int
+}
+
 
 // MARK: Can-Do Protocols
 
@@ -53,6 +70,20 @@ protocol MerchandiseDiscountAccessible: DiscountAccessible {
     var merchandiseDiscountPercent: Int { get }
 }
 
+// MARK: Required Personal/Business Information Protocols
+
+protocol Nameable {
+    var fullName: FullName { get }
+}
+
+protocol Addressable {
+    var fullAddress: FullAddress { get }
+}
+
+protocol BirthdayWishable {
+    var dateOfBirth: NSDate { get }
+}
+
 
 // MARK: Is-A Protocols
 
@@ -70,3 +101,4 @@ protocol EmployeeType: EntrantType {
 
 protocol VendorType: EntrantType {
 }
+
