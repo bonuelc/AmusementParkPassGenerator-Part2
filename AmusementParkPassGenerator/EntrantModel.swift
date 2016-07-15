@@ -40,6 +40,20 @@ protocol AllRidesAcesssible: RideAccessible {
 protocol SkipAllRideLinesAcessible: RideAccessible {
 }
 
+// MARK: Discount Accessible Protocols
+
+protocol DiscountAccessible {
+}
+
+protocol FoodDiscountAccessible: DiscountAccessible {
+    var foodDiscountPercent: Int { get }
+}
+
+protocol MerchandiseDiscountAccessible: DiscountAccessible {
+    var merchandiseDiscountPercent: Int { get }
+}
+
+
 // MARK: Is-A Protocols
 
 protocol EntrantType {
