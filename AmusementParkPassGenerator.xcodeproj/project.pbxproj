@@ -12,6 +12,7 @@
 		85B5E8861D395F550083CA31 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85B5E8841D395F550083CA31 /* Main.storyboard */; };
 		85B5E8881D395F560083CA31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85B5E8871D395F560083CA31 /* Assets.xcassets */; };
 		85B5E88B1D395F560083CA31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85B5E8891D395F560083CA31 /* LaunchScreen.storyboard */; };
+		85B5E8931D3974610083CA31 /* EntrantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B5E8921D3974610083CA31 /* EntrantModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		85B5E8871D395F560083CA31 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		85B5E88A1D395F560083CA31 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		85B5E88C1D395F560083CA31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85B5E8921D3974610083CA31 /* EntrantModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntrantModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				85B5E8801D395F550083CA31 /* AppDelegate.swift */,
 				85B5E8821D395F550083CA31 /* ViewController.swift */,
+				85B5E8921D3974610083CA31 /* EntrantModel.swift */,
 				85B5E8841D395F550083CA31 /* Main.storyboard */,
 				85B5E8871D395F560083CA31 /* Assets.xcassets */,
 				85B5E8891D395F560083CA31 /* LaunchScreen.storyboard */,
@@ -137,6 +140,7 @@
 			files = (
 				85B5E8831D395F550083CA31 /* ViewController.swift in Sources */,
 				85B5E8811D395F550083CA31 /* AppDelegate.swift in Sources */,
+				85B5E8931D3974610083CA31 /* EntrantModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
