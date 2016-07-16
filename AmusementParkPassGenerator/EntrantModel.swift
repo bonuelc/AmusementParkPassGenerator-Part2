@@ -158,3 +158,31 @@ struct VIPGuest: GuestType, AmusementAreaAccessible, AllRidesAcesssible, SkipAll
     let foodDiscountPercent: Int = 10
     let merchandiseDiscountPercent: Int = 20
 }
+
+enum BirthdayError: ErrorType {
+    case InvalidBirthday
+    case TooOldForDiscount
+}
+
+struct FreeChildGuest: GuestType, AmusementAreaAccessible, AllRidesAcesssible, BirthdayWishable {
+    
+    var dateOfBirth: NSDate
+    
+    init (birthMonth: Int, birthDay:  Int, birthYear: Int) throws {
+        guard let birthday = NSCalendar.currentCalendar().dateWithEra(1, year: birthYear, month: birthMonth, day: birthDay, hour: 0, minute: 0, second: 0, nanosecond: 0) else {
+            throw BirthdayError.InvalidBirthday
+        }
+        
+        if NSDate.numYearsOld(birthday) >= 5 {
+            throw BirthdayError.TooOldForDiscount
+        }
+        
+        dateOfBirth = birthday
+    }
+}
+
+extension NSDate {
+    static func numYearsOld(date: NSDate) -> Int {
+        return NSCalendar.currentCalendar().components(.Year, fromDate: date, toDate: NSDate(), options: []).year
+    }
+}
