@@ -147,3 +147,9 @@ protocol EmployeeType: EntrantType, Nameable, Addressable {
 protocol FullTimeEmployeeType: EmployeeType, FoodDiscountAccessible, MerchandiseDiscountAccessible, AllRidesAcesssible {
 }
 
+// Contrete Types
+
+// Guests
+
+struct ClassicGuest: GuestType, AmusementAreaAccessible, AllRidesAcesssible {
+}
