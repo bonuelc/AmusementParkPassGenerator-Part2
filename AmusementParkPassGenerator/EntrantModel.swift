@@ -153,3 +153,8 @@ protocol FullTimeEmployeeType: EmployeeType, FoodDiscountAccessible, Merchandise
 
 struct ClassicGuest: GuestType, AmusementAreaAccessible, AllRidesAcesssible {
 }
+
+struct VIPGuest: GuestType, AmusementAreaAccessible, AllRidesAcesssible, SkipAllRideLinesAcessible, FoodDiscountAccessible, MerchandiseDiscountAccessible {
+    let foodDiscountPercent: Int = 10
+    let merchandiseDiscountPercent: Int = 20
+}
