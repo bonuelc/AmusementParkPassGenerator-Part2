@@ -186,3 +186,18 @@ extension NSDate {
         return NSCalendar.currentCalendar().components(.Year, fromDate: date, toDate: NSDate(), options: []).year
     }
 }
+    
+// Employees
+
+class Employee: EmployeeType {
+    let fullName: FullName
+    let fullAddress: FullAddress
+    var foodDiscountPercent: Int = 15
+    var merchandiseDiscountPercent: Int = 25
+    
+    init(fullName: FullName, fullAddress: FullAddress) {
+        self.fullName = fullName
+        self.fullAddress = fullAddress
+    }
+}
+
