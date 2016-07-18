@@ -11,9 +11,33 @@ import Foundation
 
 // MARK: Wrapper Structs
 
+enum FullNameError: ErrorType {
+    case EmptyFirstName
+    case EmptyLastName
+}
+
+enum FullAddressError: ErrorType {
+    case EmptyStreetAddress
+    case EmptyCity
+    case EmptyState
+}
+
 struct FullName {
     let firstName: String
     let lastName: String
+    
+    init(firstName: String, lastName:String) throws {
+        if firstName.isEmpty {
+            throw FullNameError.EmptyFirstName
+        }
+        
+        if lastName.isEmpty {
+            throw FullNameError.EmptyLastName
+        }
+        
+        self.firstName = firstName
+        self.lastName = lastName
+    }
 }
 
 struct FullAddress {
@@ -21,6 +45,25 @@ struct FullAddress {
     let city: String
     let state: String
     let zipCode: Int
+    
+    init(streetAddress: String, city: String, state: String, zipCode: Int) throws {
+        if streetAddress.isEmpty {
+            throw FullAddressError.EmptyStreetAddress
+        }
+        
+        if city.isEmpty {
+            throw FullAddressError.EmptyCity
+        }
+        
+        if state.isEmpty {
+            throw FullAddressError.EmptyState
+        }
+        
+        self.streetAddress = streetAddress
+        self.city = city
+        self.state = state
+        self.zipCode = zipCode
+    }
 }
 
 
