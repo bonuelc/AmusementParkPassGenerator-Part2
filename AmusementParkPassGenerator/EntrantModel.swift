@@ -210,3 +210,11 @@ class HourlyEmployeeRideServices: Employee, RideControlAreaAccessible, AllRidesA
 class HourlyEmployeeMaintenance: Employee, KitchenAreaAccessible, RideControlAreaAccessible, MaintenanceAreaAccessible {
 }
 
+class Manager: Employee, KitchenAreaAccessible, RideControlAreaAccessible, MaintenanceAreaAccessible, OfficeAreaAccessible {
+    
+    override init(fullName: FullName, fullAddress: FullAddress) {
+        super.init(fullName: fullName, fullAddress: fullAddress)
+        self.foodDiscountPercent = 25
+    }
+}
+
