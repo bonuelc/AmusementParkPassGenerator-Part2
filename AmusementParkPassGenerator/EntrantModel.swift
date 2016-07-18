@@ -201,3 +201,6 @@ class Employee: EmployeeType {
     }
 }
 
+class HourlyEmployeeFoodServices: Employee, KitchenAreaAccessible, AllRidesAcesssible {
+}
+
