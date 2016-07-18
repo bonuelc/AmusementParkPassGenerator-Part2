@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		852335821D3D6ED700E195C4 /* Scanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852335811D3D6ED700E195C4 /* Scanner.swift */; };
 		85B5E8811D395F550083CA31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B5E8801D395F550083CA31 /* AppDelegate.swift */; };
 		85B5E8831D395F550083CA31 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B5E8821D395F550083CA31 /* ViewController.swift */; };
 		85B5E8861D395F550083CA31 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85B5E8841D395F550083CA31 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		852335811D3D6ED700E195C4 /* Scanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scanner.swift; sourceTree = "<group>"; };
 		85B5E87D1D395F550083CA31 /* AmusementParkPassGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AmusementParkPassGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85B5E8801D395F550083CA31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85B5E8821D395F550083CA31 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				85B5E8801D395F550083CA31 /* AppDelegate.swift */,
 				85B5E8821D395F550083CA31 /* ViewController.swift */,
 				85B5E8921D3974610083CA31 /* EntrantModel.swift */,
+				852335811D3D6ED700E195C4 /* Scanner.swift */,
 				85B5E8841D395F550083CA31 /* Main.storyboard */,
 				85B5E8871D395F560083CA31 /* Assets.xcassets */,
 				85B5E8891D395F560083CA31 /* LaunchScreen.storyboard */,
@@ -140,6 +143,7 @@
 			files = (
 				85B5E8831D395F550083CA31 /* ViewController.swift in Sources */,
 				85B5E8811D395F550083CA31 /* AppDelegate.swift in Sources */,
+				852335821D3D6ED700E195C4 /* Scanner.swift in Sources */,
 				85B5E8931D3974610083CA31 /* EntrantModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,6 +294,7 @@
 				85B5E8911D395F560083CA31 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
