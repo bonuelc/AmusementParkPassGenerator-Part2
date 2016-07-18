@@ -207,3 +207,6 @@ class HourlyEmployeeFoodServices: Employee, KitchenAreaAccessible, AllRidesAcess
 class HourlyEmployeeRideServices: Employee, RideControlAreaAccessible, AllRidesAcesssible {
 }
 
+class HourlyEmployeeMaintenance: Employee, KitchenAreaAccessible, RideControlAreaAccessible, MaintenanceAreaAccessible {
+}
+
