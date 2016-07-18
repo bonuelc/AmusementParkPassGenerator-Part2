@@ -22,7 +22,7 @@ enum FullAddressError: ErrorType {
     case EmptyState
 }
 
-struct FullName {
+struct FullName: CustomStringConvertible {
     let firstName: String
     let lastName: String
     
@@ -37,6 +37,10 @@ struct FullName {
         
         self.firstName = firstName
         self.lastName = lastName
+    }
+    
+    var description: String {
+        return "\(firstName) \(lastName)"
     }
 }
 
