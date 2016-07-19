@@ -35,7 +35,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         createInvalidEntrants()
+        
         createValidEntrants()
+        scanForAllAccessTypes(entrants)
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,6 +65,24 @@ class ViewController: UIViewController {
     func playSound(url: NSURL) {
         AudioServicesCreateSystemSoundID(url, &sound)
         AudioServicesPlaySystemSound(sound)
+    }
+    
+    func scanForAllAccessTypes(entrants: [EntrantType]) {
+        for entrant in entrants {
+            print()
+            if let person = entrant as? Nameable {
+                print(person.fullName)
+            }
+            scan(entrant, accessType: .AmusementAreas)
+            scan(entrant, accessType: .KitchenAreas)
+            scan(entrant, accessType: .RideControlAreas)
+            scan(entrant, accessType: .MaintenanceAreas)
+            scan(entrant, accessType: .OfficeAreas)
+            scan(entrant, accessType: .AllRides)
+            scan(entrant, accessType: .SkipRideLines)
+            scan(entrant, accessType: .FoodDiscount)
+            scan(entrant, accessType: .MerchandiseDiscount)
+        }
     }
     
     func createValidEntrants() {
