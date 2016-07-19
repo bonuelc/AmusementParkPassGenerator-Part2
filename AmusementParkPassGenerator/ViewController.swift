@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import AudioToolbox
 
 class ViewController: UIViewController {
+    
+    var sound: SystemSoundID = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,5 +29,10 @@ class ViewController: UIViewController {
         } else {
             print("Access to \(accessType) is denied")
         }
+    }
+    
+    func playSound(url: NSURL) {
+        AudioServicesCreateSystemSoundID(url, &sound)
+        AudioServicesPlaySystemSound(sound)
     }
 }
