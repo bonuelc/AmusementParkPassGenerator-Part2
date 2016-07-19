@@ -43,8 +43,10 @@ class ViewController: UIViewController {
     func scan(entrant: EntrantType, accessType: AccessType) {
         if Scanner.scan(entrant, accessType: accessType) {
             print("Access to \(accessType) is granted")
+            playSound(Access.Granted.url)
         } else {
             print("Access to \(accessType) is denied")
+            playSound(Access.Denied.url)
         }
     }
     
