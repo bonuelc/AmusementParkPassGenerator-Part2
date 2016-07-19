@@ -11,8 +11,6 @@ import AudioToolbox
 
 class ViewController: UIViewController {
     
-    var sound: SystemSoundID = 0
-    
     enum Access {
         case Granted
         case Denied
@@ -29,6 +27,9 @@ class ViewController: UIViewController {
             return  NSURL(fileURLWithPath: path)
         }
     }
+    
+    var sound: SystemSoundID = 0
+    var entrants: [EntrantType] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
