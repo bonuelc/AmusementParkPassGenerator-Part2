@@ -20,5 +20,11 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    func scan(entrant: EntrantType, accessType: AccessType) {
+        if Scanner.scan(entrant, accessType: accessType) {
+            print("Access to \(accessType) is granted")
+        } else {
+            print("Access to \(accessType) is denied")
+        }
+    }
 }
