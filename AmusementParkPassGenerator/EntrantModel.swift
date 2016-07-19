@@ -185,8 +185,19 @@ extension NSDate {
     static func numYearsOld(date: NSDate) -> Int {
         return NSCalendar.currentCalendar().components(.Year, fromDate: date, toDate: NSDate(), options: []).year
     }
-}
     
+    static func isTodayAnniversary(eventDate: NSDate) -> Bool {
+        let calendar = NSCalendar.currentCalendar()
+        
+        let today = NSDate()
+        
+        let todayComponents = calendar.components([.Month, .Day], fromDate: today)
+        let eventComponents = calendar.components([.Month, .Day], fromDate: eventDate)
+        
+        return todayComponents.month == eventComponents.month && todayComponents.day == eventComponents.day
+    }
+}
+
 // Employees
 
 class Employee: EmployeeType {
