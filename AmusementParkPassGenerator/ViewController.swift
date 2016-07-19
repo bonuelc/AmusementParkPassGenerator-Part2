@@ -12,6 +12,23 @@ import AudioToolbox
 class ViewController: UIViewController {
     
     var sound: SystemSoundID = 0
+    
+    enum Access {
+        case Granted
+        case Denied
+        
+        private var filename: String {
+            switch(self) {
+            case .Granted: return "AccessGranted"
+            case .Denied: return "AccessDenied"
+            }
+        }
+        
+        var url: NSURL {
+            let path = NSBundle.mainBundle().pathForResource(self.filename, ofType: "wav")!
+            return  NSURL(fileURLWithPath: path)
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
