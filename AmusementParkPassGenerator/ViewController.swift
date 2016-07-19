@@ -34,6 +34,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        createInvalidEntrants()
         createValidEntrants()
     }
 
@@ -90,5 +91,78 @@ class ViewController: UIViewController {
         let bowserAddress = try! FullAddress(streetAddress: "123 Lava", city: "Phoenix", state: "AZ", zipCode: 12345)
         let Bowser = Manager(fullName: bowserName, fullAddress: bowserAddress)
         entrants.append(Bowser)
+    }
+    
+    func createInvalidEntrants() {
+        // try to add guest too old for a free pass
+        do {
+            let child = try FreeChildGuest(birthMonth: 7, birthDay: 20, birthYear: 2000)
+            entrants.append(child)
+        } catch BirthdayError.InvalidBirthday {
+            print("Invalid Birthday")
+        } catch BirthdayError.TooOldForDiscount {
+            print("Children must be less than five years old to receive free entry.")
+        } catch let error {
+            print(error)
+        }
+        
+        // valid dummy values
+        let validName = try! FullName(firstName: "Princess", lastName: "Peach")
+        let validAddress = try! FullAddress(streetAddress: "123 Real Address", city: "Real City", state: "AA", zipCode: 12345)
+        
+        // try to add a full-time employee with an empty first name
+        do {
+            let emptyFirstName = try FullName(firstName: "", lastName: "Troopa")
+            let newEmployee = HourlyEmployeeFoodServices(fullName: emptyFirstName, fullAddress: validAddress)
+            entrants.append(newEmployee)
+        } catch FullNameError.EmptyFirstName {
+            print("First name cannot be empty")
+        } catch let error {
+            print(error)
+        }
+        
+        // try to add a full-time employee with an empty last name
+        do {
+            let emptyLastName = try FullName(firstName: "Koopa", lastName: "")
+            let newEmployee = HourlyEmployeeRideServices(fullName: emptyLastName, fullAddress: validAddress)
+            entrants.append(newEmployee)
+        } catch FullNameError.EmptyLastName {
+            print("Last name cannot be empty")
+        } catch let error {
+            print(error)
+        }
+        
+        // try to add a full-time employee with an empty street address
+        do {
+            let emptyStreetAddress = try FullAddress(streetAddress: "", city: "Real City", state: "AA", zipCode: 12345)
+            let newEmployee = HourlyEmployeeMaintenance(fullName: validName, fullAddress: emptyStreetAddress)
+            entrants.append(newEmployee)
+        } catch FullAddressError.EmptyStreetAddress {
+            print("Street address cannot be empty")
+        } catch let error {
+            print(error)
+        }
+        
+        // try to add a full-time employee with an empty city
+        do {
+            let emptyCity = try FullAddress(streetAddress: "Real Street Address", city: "", state: "AA", zipCode: 12345)
+            let newEmployee = HourlyEmployeeMaintenance(fullName: validName, fullAddress: emptyCity)
+            entrants.append(newEmployee)
+        } catch FullAddressError.EmptyCity {
+            print("City cannot be empty")
+        } catch let error {
+            print(error)
+        }
+        
+        // try to add a full-time employee with an empty city
+        do {
+            let emptyState = try FullAddress(streetAddress: "Real Street Address", city: "RealCity", state: "", zipCode: 12345)
+            let newEmployee = Manager(fullName: validName, fullAddress: emptyState)
+            entrants.append(newEmployee)
+        } catch FullAddressError.EmptyState {
+            print("State cannot be empty")
+        } catch let error {
+            print(error)
+        }
     }
 }
