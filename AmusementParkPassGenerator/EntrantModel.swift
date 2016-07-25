@@ -162,6 +162,7 @@ struct VIPGuest: GuestType, AmusementAreaAccessible, AllRidesAcesssible, SkipAll
 enum BirthdayError: ErrorType {
     case InvalidBirthday
     case TooOldForDiscount
+    case TooYoungForDiscount
 }
 
 struct FreeChildGuest: GuestType, AmusementAreaAccessible, AllRidesAcesssible, BirthdayWishable {
@@ -203,6 +204,31 @@ struct SeasonPassGuest: GuestType, SkipAllRideLinesAcessible, FoodDiscountAccess
     let fullAddress: FullAddress
     let foodDiscountPercent: Int = 10
     let merchandiseDiscountPercent: Int = 20
+}
+
+struct SeniorGuest: GuestType, SkipAllRideLinesAcessible, FoodDiscountAccessible, MerchandiseDiscountAccessible, Nameable, BirthdayWishable {
+    
+    let dateOfBirth: NSDate
+    
+    let fullName: FullName
+    let fullAddress: FullAddress
+    let foodDiscountPercent: Int = 10
+    let merchandiseDiscountPercent: Int = 10
+    
+    init (fullName: FullName, fullAddress: FullAddress, birthMonth: Int, birthDay:  Int, birthYear: Int) throws {
+        guard let birthday = NSCalendar.currentCalendar().dateWithEra(1, year: birthYear, month: birthMonth, day: birthDay, hour: 0, minute: 0, second: 0, nanosecond: 0) else {
+            throw BirthdayError.InvalidBirthday
+        }
+        
+        if NSDate.numYearsOld(birthday) < 65 {
+            throw BirthdayError.TooYoungForDiscount
+        }
+        
+        self.dateOfBirth = birthday
+        
+        self.fullName = fullName
+        self.fullAddress = fullAddress
+    }
 }
 
 // Employees
