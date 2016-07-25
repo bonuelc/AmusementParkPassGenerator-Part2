@@ -342,3 +342,15 @@ class Vendor: VendorType {
         self.fullAddress = fullAddress
     }
 }
+
+class Acme: Vendor, KitchenAreaAccessible {
+}
+
+class Orkin: Vendor, AmusementAreaAccessible, RideControlAreaAccessible, KitchenAreaAccessible {
+}
+
+class Fedex: Vendor, MaintenanceAreaAccessible, OfficeAreaAccessible {
+}
+
+class NWElectrical: Vendor, AmusementAreaAccessible, RideControlAreaAccessible, KitchenAreaAccessible, MaintenanceAreaAccessible, OfficeAreaAccessible {
+}
