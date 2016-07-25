@@ -233,7 +233,7 @@ struct SeniorGuest: GuestType, SkipAllRideLinesAcessible, FoodDiscountAccessible
 
 // Employees
 
-class Employee: EmployeeType {
+class FullTimeEmployee: FullTimeEmployeeType {
     let fullName: FullName
     let fullAddress: FullAddress
     var foodDiscountPercent: Int = 15
@@ -245,16 +245,16 @@ class Employee: EmployeeType {
     }
 }
 
-class HourlyEmployeeFoodServices: Employee, KitchenAreaAccessible, AllRidesAcesssible {
+class HourlyEmployeeFoodServices: FullTimeEmployee, KitchenAreaAccessible {
 }
 
-class HourlyEmployeeRideServices: Employee, RideControlAreaAccessible, AllRidesAcesssible {
+class HourlyEmployeeRideServices: FullTimeEmployee, RideControlAreaAccessible {
 }
 
-class HourlyEmployeeMaintenance: Employee, KitchenAreaAccessible, RideControlAreaAccessible, MaintenanceAreaAccessible {
+class HourlyEmployeeMaintenance: FullTimeEmployee, KitchenAreaAccessible, RideControlAreaAccessible, MaintenanceAreaAccessible {
 }
 
-class Manager: Employee, KitchenAreaAccessible, RideControlAreaAccessible, MaintenanceAreaAccessible, OfficeAreaAccessible {
+class Manager: FullTimeEmployee, KitchenAreaAccessible, RideControlAreaAccessible, MaintenanceAreaAccessible, OfficeAreaAccessible {
     
     override init(fullName: FullName, fullAddress: FullAddress) {
         super.init(fullName: fullName, fullAddress: fullAddress)
