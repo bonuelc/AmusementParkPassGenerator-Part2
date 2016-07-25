@@ -135,16 +135,19 @@ protocol BirthdayWishable {
 
 // MARK: Is-A Protocols
 
-protocol EntrantType: AmusementAreaAccessible {
+protocol EntrantType {
 }
 
-protocol GuestType: EntrantType, AllRidesAcesssible {
+protocol GuestType: EntrantType, AmusementAreaAccessible, AllRidesAcesssible {
 }
 
 protocol EmployeeType: EntrantType, Nameable, Addressable {
 }
 
-protocol FullTimeEmployeeType: EmployeeType, FoodDiscountAccessible, MerchandiseDiscountAccessible, AllRidesAcesssible {
+protocol FullTimeEmployeeType: EmployeeType, AmusementAreaAccessible, FoodDiscountAccessible, MerchandiseDiscountAccessible, AllRidesAcesssible {
+}
+
+protocol ContractEmployeeType: EmployeeType {
 }
 
 // Contrete Types
