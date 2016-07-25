@@ -265,3 +265,27 @@ class Manager: FullTimeEmployee, KitchenAreaAccessible, RideControlAreaAccessibl
     }
 }
 
+class ContractEmployee: ContractEmployeeType {
+    let fullName: FullName
+    let fullAddress: FullAddress
+    
+    init(fullName: FullName, fullAddress: FullAddress) {
+        self.fullName = fullName
+        self.fullAddress = fullAddress
+    }
+}
+
+class ContractEmployeeProject1001: ContractEmployee, AmusementAreaAccessible, AllRidesAcesssible, SkipAllRideLinesAcessible {
+}
+
+class ContractEmployeeProject1002: ContractEmployee, AmusementAreaAccessible, MaintenanceAreaAccessible, AllRidesAcesssible, SkipAllRideLinesAcessible {
+}
+
+class ContractEmployeeProject1003: ContractEmployee, AmusementAreaAccessible, KitchenAreaAccessible, MaintenanceAreaAccessible, OfficeAreaAccessible, AllRidesAcesssible, SkipAllRideLinesAcessible {
+}
+
+class ContractEmployeeProject2001: ContractEmployee, OfficeAreaAccessible {
+}
+
+class ContractEmployeeProject2002: ContractEmployee, KitchenAreaAccessible, MaintenanceAreaAccessible {
+}
