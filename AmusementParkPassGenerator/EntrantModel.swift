@@ -321,3 +321,24 @@ class ContractEmployeeProject2001: ContractEmployee, OfficeAreaAccessible {
 class ContractEmployeeProject2002: ContractEmployee, KitchenAreaAccessible, MaintenanceAreaAccessible {
 }
 
+// Vendors
+
+class Vendor: VendorType {
+    let fullName: FullName
+    let fullAddress: FullAddress
+    
+    var dateOfVisit: NSDate?
+    
+    let dateOfBirth: NSDate
+    
+    init (fullName: FullName, fullAddress: FullAddress, birthMonth: Int, birthDay:  Int, birthYear: Int) throws {
+        guard let birthday = NSCalendar.currentCalendar().dateWithEra(1, year: birthYear, month: birthMonth, day: birthDay, hour: 0, minute: 0, second: 0, nanosecond: 0) else {
+            throw BirthdayError.InvalidBirthday
+        }
+        
+        self.dateOfBirth = birthday
+        
+        self.fullName = fullName
+        self.fullAddress = fullAddress
+    }
+}
