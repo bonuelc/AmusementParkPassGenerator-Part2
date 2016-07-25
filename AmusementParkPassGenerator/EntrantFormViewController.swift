@@ -12,15 +12,24 @@ class EntrantFormViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     func scan(entrant: EntrantType, accessType: AccessType) {
         Scanner.scan(entrant, accessType: accessType)
+    }
+    
+    @IBAction func guestTabTapped(sender: UIButton) {
+    }
+    
+    @IBAction func employeeTabTapped(sender: UIButton) {
+    }
+    
+    @IBAction func managerTabTapped(sender: UIButton) {
+    }
+    
+    @IBAction func contractorTabTapped(sender: UIButton) {
+    }
+    
+    @IBAction func vendorTabTapped(sender: UIButton) {
     }
 }

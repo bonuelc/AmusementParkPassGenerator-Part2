@@ -29,6 +29,9 @@
                                         <state key="normal" title="Guest">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="guestTabTapped:" destination="7Q3-OL-Vix" eventType="touchUpInside" id="yox-vQ-SzB"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KF6-Iy-dL9">
                                         <rect key="frame" x="154" y="0.0" width="153" height="70"/>
@@ -37,6 +40,9 @@
                                         <state key="normal" title="Employee">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="employeeTabTapped:" destination="7Q3-OL-Vix" eventType="touchUpInside" id="mn2-yS-tr3"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lwm-QQ-Shx">
                                         <rect key="frame" x="307" y="0.0" width="154" height="70"/>
@@ -45,6 +51,9 @@
                                         <state key="normal" title="Manager">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="managerTabTapped:" destination="7Q3-OL-Vix" eventType="touchUpInside" id="6aM-z4-suG"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gD2-F8-WwQ">
                                         <rect key="frame" x="461" y="0.0" width="153" height="70"/>
@@ -53,6 +62,9 @@
                                         <state key="normal" title="Contractor">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="contractorTabTapped:" destination="7Q3-OL-Vix" eventType="touchUpInside" id="9jz-18-1CS"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jJ9-Qb-9Zs">
                                         <rect key="frame" x="614" y="0.0" width="154" height="70"/>
@@ -61,6 +73,9 @@
                                         <state key="normal" title="Vendor">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="vendorTabTapped:" destination="7Q3-OL-Vix" eventType="touchUpInside" id="AbF-qG-opO"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
