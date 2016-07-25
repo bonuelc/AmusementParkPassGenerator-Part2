@@ -71,17 +71,41 @@
 		85B5E87F1D395F550083CA31 /* AmusementParkPassGenerator */ = {
 			isa = PBXGroup;
 			children = (
-				85B5E8801D395F550083CA31 /* AppDelegate.swift */,
-				85B5E8821D395F550083CA31 /* ViewController.swift */,
-				85B5E8921D3974610083CA31 /* EntrantModel.swift */,
-				852335811D3D6ED700E195C4 /* Scanner.swift */,
+				85DAD28B1D466BFC001E7EF5 /* Model */,
+				85DAD28A1D466BF8001E7EF5 /* View */,
+				85DAD28C1D466C01001E7EF5 /* Controller */,
 				852335871D3DDFD600E195C4 /* Audio */,
+				85B5E8801D395F550083CA31 /* AppDelegate.swift */,
 				85B5E8841D395F550083CA31 /* Main.storyboard */,
 				85B5E8871D395F560083CA31 /* Assets.xcassets */,
 				85B5E8891D395F560083CA31 /* LaunchScreen.storyboard */,
 				85B5E88C1D395F560083CA31 /* Info.plist */,
 			);
 			path = AmusementParkPassGenerator;
+			sourceTree = "<group>";
+		};
+		85DAD28A1D466BF8001E7EF5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				85B5E8821D395F550083CA31 /* ViewController.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		85DAD28B1D466BFC001E7EF5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				85B5E8921D3974610083CA31 /* EntrantModel.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		85DAD28C1D466C01001E7EF5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				852335811D3D6ED700E195C4 /* Scanner.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
