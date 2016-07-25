@@ -323,6 +323,33 @@ class ContractEmployeeProject2002: ContractEmployee, KitchenAreaAccessible, Main
 
 // Vendors
 
+enum VendorNameError: ErrorType {
+    case InvalidVendor
+}
+
+struct VendorFactory {
+    
+    func createVendor(fullName: FullName, fullAddress: FullAddress, birthMonth: Int, birthDay:  Int, birthYear: Int, vendorName: String) throws -> VendorType {
+        do {
+            
+            switch vendorName {
+            case "Acme":
+                return try Acme(fullName: fullName, fullAddress: fullAddress, birthMonth: birthMonth, birthDay: birthDay, birthYear: birthYear)
+            case "Orkin":
+                return try Orkin(fullName: fullName, fullAddress: fullAddress, birthMonth: birthMonth, birthDay: birthDay, birthYear: birthYear)
+            case "Fedex":
+                return try Fedex(fullName: fullName, fullAddress: fullAddress, birthMonth: birthMonth, birthDay: birthDay, birthYear: birthYear)
+            case "NW Electrical":
+                return try NWElectrical(fullName: fullName, fullAddress: fullAddress, birthMonth: birthMonth, birthDay: birthDay, birthYear: birthYear)
+            default:
+                throw VendorNameError.InvalidVendor
+            }
+        } catch {
+            throw BirthdayError.InvalidBirthday
+        }
+    }
+}
+
 class Vendor: VendorType {
     let fullName: FullName
     let fullAddress: FullAddress
