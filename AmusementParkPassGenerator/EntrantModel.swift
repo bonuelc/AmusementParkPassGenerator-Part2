@@ -198,6 +198,13 @@ extension NSDate {
     }
 }
 
+struct SeasonPassGuest: GuestType, SkipAllRideLinesAcessible, FoodDiscountAccessible, MerchandiseDiscountAccessible, Nameable, Addressable {
+    let fullName: FullName
+    let fullAddress: FullAddress
+    let foodDiscountPercent: Int = 10
+    let merchandiseDiscountPercent: Int = 20
+}
+
 // Employees
 
 class Employee: EmployeeType {
