@@ -132,6 +132,10 @@ protocol BirthdayWishable {
     var dateOfBirth: NSDate { get }
 }
 
+protocol VisitDateable {
+    var dateOfVisit: NSDate? { get set }
+}
+
 
 // MARK: Is-A Protocols
 
@@ -148,6 +152,9 @@ protocol FullTimeEmployeeType: EmployeeType, AmusementAreaAccessible, FoodDiscou
 }
 
 protocol ContractEmployeeType: EmployeeType {
+}
+
+protocol VendorType: EntrantType, Nameable, BirthdayWishable, VisitDateable {
 }
 
 // Contrete Types
@@ -313,3 +320,4 @@ class ContractEmployeeProject2001: ContractEmployee, OfficeAreaAccessible {
 
 class ContractEmployeeProject2002: ContractEmployee, KitchenAreaAccessible, MaintenanceAreaAccessible {
 }
+
