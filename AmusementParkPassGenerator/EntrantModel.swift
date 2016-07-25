@@ -151,10 +151,10 @@ protocol FullTimeEmployeeType: EmployeeType, FoodDiscountAccessible, Merchandise
 
 // Guests
 
-struct ClassicGuest: GuestType, AmusementAreaAccessible, AllRidesAcesssible {
+struct ClassicGuest: GuestType {
 }
 
-struct VIPGuest: GuestType, AmusementAreaAccessible, AllRidesAcesssible, SkipAllRideLinesAcessible, FoodDiscountAccessible, MerchandiseDiscountAccessible {
+struct VIPGuest: GuestType, SkipAllRideLinesAcessible, FoodDiscountAccessible, MerchandiseDiscountAccessible {
     let foodDiscountPercent: Int = 10
     let merchandiseDiscountPercent: Int = 20
 }
@@ -165,7 +165,7 @@ enum BirthdayError: ErrorType {
     case TooYoungForDiscount
 }
 
-struct FreeChildGuest: GuestType, AmusementAreaAccessible, AllRidesAcesssible, BirthdayWishable {
+struct FreeChildGuest: GuestType, BirthdayWishable {
     
     var dateOfBirth: NSDate
     
