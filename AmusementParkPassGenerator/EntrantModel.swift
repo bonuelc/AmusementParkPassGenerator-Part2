@@ -265,6 +265,30 @@ class Manager: FullTimeEmployee, KitchenAreaAccessible, RideControlAreaAccessibl
     }
 }
 
+enum ProjectNumberError: ErrorType {
+    case InvalidNumber
+}
+
+struct ContractEmployeeFactory {
+    
+    func createContractEmployee(fullName: FullName, fullAddress: FullAddress, projectNumber: Int) throws -> EmployeeType {
+        switch projectNumber {
+        case 1001:
+            return ContractEmployeeProject1001(fullName: fullName, fullAddress: fullAddress)
+        case 1002:
+            return ContractEmployeeProject1002(fullName: fullName, fullAddress: fullAddress)
+        case 1003:
+            return ContractEmployeeProject1003(fullName: fullName, fullAddress: fullAddress)
+        case 2001:
+            return ContractEmployeeProject2001(fullName: fullName, fullAddress: fullAddress)
+        case 2002:
+            return ContractEmployeeProject2002(fullName: fullName, fullAddress: fullAddress)
+        default:
+            throw ProjectNumberError.InvalidNumber
+        }
+    }
+}
+
 class ContractEmployee: ContractEmployeeType {
     let fullName: FullName
     let fullAddress: FullAddress
