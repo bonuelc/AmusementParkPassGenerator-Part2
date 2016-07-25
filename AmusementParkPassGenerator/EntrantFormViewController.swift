@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  EntrantFormViewController.swift
 //  AmusementParkPassGenerator
 //
 //  Created by Christopher Bonuel on 7/15/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class EntrantFormViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

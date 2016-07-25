@@ -7,10 +7,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Entrant Form View Controller-->
         <scene sceneID="DRC-wR-ST5">
             <objects>
-                <viewController id="7Q3-OL-Vix" customClass="ViewController" customModule="AmusementParkPassGenerator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="7Q3-OL-Vix" customClass="EntrantFormViewController" customModule="AmusementParkPassGenerator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JKN-tE-d2V"/>
                         <viewControllerLayoutGuide type="bottom" id="qgM-Gn-o9N"/>
