@@ -6,6 +6,8 @@
 //  Copyright © 2016 Christopher Bonuel. All rights reserved.
 //
 
+import AudioToolbox
+
 enum AccessType: String {
     // Area Access
     case AmusementAreas, KitchenAreas, RideControlAreas, MaintenanceAreas, OfficeAreas
@@ -15,30 +17,75 @@ enum AccessType: String {
     case FoodDiscount, MerchandiseDiscount
 }
 
+
+
+enum Access {
+    case Granted
+    case Denied
+    
+    private var filename: String {
+        switch(self) {
+        case .Granted: return "AccessGranted"
+        case .Denied: return "AccessDenied"
+        }
+    }
+    
+    var url: NSURL {
+        let path = NSBundle.mainBundle().pathForResource(self.filename, ofType: "wav")!
+        return  NSURL(fileURLWithPath: path)
+    }
+}
+
 class Scanner {
-    static func scan(entrant: EntrantType, accessType: AccessType) -> Bool {
+    
+    static var sound: SystemSoundID = 0
+    
+    static func scan(entrant: EntrantType, accessType: AccessType) {
+        
+        if let birthdayPerson = entrant as? BirthdayWishable {
+            if NSDate.isTodayAnniversary(birthdayPerson.dateOfBirth) {
+                print("Happy Birthday!")
+            }
+        }
+        
+        
+        var accessGranted: Bool = false
+        
         switch accessType {
         // Area Access
         case .AmusementAreas:
-            return entrant is AmusementAreaAccessible
+            accessGranted = entrant is AmusementAreaAccessible
         case .KitchenAreas:
-            return entrant is KitchenAreaAccessible
+            accessGranted = entrant is KitchenAreaAccessible
         case .RideControlAreas:
-            return entrant is RideControlAreaAccessible
+            accessGranted = entrant is RideControlAreaAccessible
         case .MaintenanceAreas:
-            return entrant is MaintenanceAreaAccessible
+            accessGranted = entrant is MaintenanceAreaAccessible
         case .OfficeAreas:
-            return entrant is OfficeAreaAccessible
+            accessGranted = entrant is OfficeAreaAccessible
         // Ride Access
         case .AllRides:
-            return entrant is AllRidesAcesssible
+            accessGranted = entrant is AllRidesAcesssible
         case .SkipRideLines:
-            return entrant is SkipAllRideLinesAcessible
+            accessGranted = entrant is SkipAllRideLinesAcessible
         // Discount Access
         case .FoodDiscount:
-            return entrant is FoodDiscountAccessible
+            accessGranted = entrant is FoodDiscountAccessible
         case .MerchandiseDiscount:
-            return entrant is MerchandiseDiscountAccessible
+            accessGranted = entrant is MerchandiseDiscountAccessible
         }
+        
+        if accessGranted {
+            print("Access to \(accessType) is granted")
+            playSound(Access.Granted.url)
+        } else {
+            print("Access to \(accessType) is denied")
+            playSound(Access.Denied.url)
+        }
+    }
+    
+    static func playSound(url: NSURL) {
+        AudioServicesCreateSystemSoundID(url, &sound)
+        AudioServicesPlaySystemSound(sound)
     }
 }

@@ -7,28 +7,8 @@
 //
 
 import UIKit
-import AudioToolbox
 
 class ViewController: UIViewController {
-    
-    var sound: SystemSoundID = 0
-    
-    enum Access {
-        case Granted
-        case Denied
-        
-        private var filename: String {
-            switch(self) {
-            case .Granted: return "AccessGranted"
-            case .Denied: return "AccessDenied"
-            }
-        }
-        
-        var url: NSURL {
-            let path = NSBundle.mainBundle().pathForResource(self.filename, ofType: "wav")!
-            return  NSURL(fileURLWithPath: path)
-        }
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,24 +21,6 @@ class ViewController: UIViewController {
     }
 
     func scan(entrant: EntrantType, accessType: AccessType) {
-        
-        if let birthdayPerson = entrant as? BirthdayWishable {
-            if NSDate.isTodayAnniversary(birthdayPerson.dateOfBirth) {
-                print("Happy Birthday!")
-            }
-        }
-        
-        if Scanner.scan(entrant, accessType: accessType) {
-            print("Access to \(accessType) is granted")
-            playSound(Access.Granted.url)
-        } else {
-            print("Access to \(accessType) is denied")
-            playSound(Access.Denied.url)
-        }
-    }
-    
-    func playSound(url: NSURL) {
-        AudioServicesCreateSystemSoundID(url, &sound)
-        AudioServicesPlaySystemSound(sound)
+        Scanner.scan(entrant, accessType: accessType)
     }
 }
