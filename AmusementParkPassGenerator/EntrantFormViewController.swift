@@ -32,4 +32,7 @@ class EntrantFormViewController: UIViewController {
     
     @IBAction func vendorTabTapped(sender: UIButton) {
     }
+    
+    @IBAction func entrantSubtypeTapped(sender: UIButton) {
+    }
 }
