@@ -10,6 +10,12 @@ import UIKit
 
 class EntrantFormViewController: UIViewController {
 
+    @IBOutlet weak var subtypeTab0: UIButton!
+    @IBOutlet weak var subtypeTab1: UIButton!
+    @IBOutlet weak var subtypeTab2: UIButton!
+    @IBOutlet weak var subtypeTab3: UIButton!
+    @IBOutlet weak var subtypeTab4: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

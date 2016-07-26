@@ -338,6 +338,13 @@
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                    <connections>
+                        <outlet property="subtypeTab0" destination="JUC-SA-HXM" id="6Ya-uj-TYH"/>
+                        <outlet property="subtypeTab1" destination="8Em-Nt-GAK" id="9rp-gq-ylk"/>
+                        <outlet property="subtypeTab2" destination="HtC-Zc-nq5" id="mgw-ZV-XYk"/>
+                        <outlet property="subtypeTab3" destination="sGO-bw-NsX" id="25J-CT-G6k"/>
+                        <outlet property="subtypeTab4" destination="0qP-ta-BH0" id="B21-Em-Lff"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3TN-mS-Wpo" sceneMemberID="firstResponder"/>
             </objects>
