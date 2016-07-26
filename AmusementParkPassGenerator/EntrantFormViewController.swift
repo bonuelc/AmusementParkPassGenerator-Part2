@@ -35,18 +35,23 @@ class EntrantFormViewController: UIViewController {
     }
     
     @IBAction func guestTabTapped(sender: UIButton) {
+        labelSubtabs("Classic", "VIP", "Free Child", "Season Pass", "Senior")
     }
     
     @IBAction func employeeTabTapped(sender: UIButton) {
+        labelSubtabs("Food Services", "Ride Services", "Maintenance")
     }
     
     @IBAction func managerTabTapped(sender: UIButton) {
+        labelSubtabs(" ")
     }
-    
+
     @IBAction func contractorTabTapped(sender: UIButton) {
+        labelSubtabs("1001", "1002", "1003", "2001", "2002")
     }
     
     @IBAction func vendorTabTapped(sender: UIButton) {
+        labelSubtabs("Acme", "Orkin", "Fedex", "NW Electrical")
     }
     
     @IBAction func entrantSubtypeTapped(sender: UIButton) {
@@ -62,5 +67,12 @@ class EntrantFormViewController: UIViewController {
         for i in count..<subtypeTabs.count {
             subtypeTabs[i].hidden = true
         }
+    }
+    
+    func labelSubtabs(labels: String...) {
+        for (index, label) in labels.enumerate() {
+            subtypeTabs[index].setTitle("\(label)", forState: .Normal)
+        }
+        showSubtabs(labels.count)
     }
 }
