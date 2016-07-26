@@ -51,4 +51,16 @@ class EntrantFormViewController: UIViewController {
     
     @IBAction func entrantSubtypeTapped(sender: UIButton) {
     }
+    
+    // MARK: Helper methods
+    
+    func showSubtabs(count: Int) {
+        for i in 0..<count {
+            subtypeTabs[i].hidden = false
+        }
+        
+        for i in count..<subtypeTabs.count {
+            subtypeTabs[i].hidden = true
+        }
+    }
 }
