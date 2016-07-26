@@ -19,6 +19,14 @@ class EntrantFormViewController: UIViewController {
     @IBOutlet weak var cityTextField: UITextField!
     @IBOutlet weak var stateTextField: UITextField!
     @IBOutlet weak var zipCodeTextField: UITextField!
+    
+    @IBOutlet weak var guestTab: UIButton!
+    @IBOutlet weak var employeeTab: UIButton!
+    @IBOutlet weak var managerTab: UIButton!
+    @IBOutlet weak var contractorTab: UIButton!
+    @IBOutlet weak var vendorTab: UIButton!
+    
+    var typeTabs: [UIButton]!
 
     @IBOutlet weak var subtypeTab0: UIButton!
     @IBOutlet weak var subtypeTab1: UIButton!
@@ -30,6 +38,14 @@ class EntrantFormViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        typeTabs = [
+            guestTab,
+            employeeTab,
+            managerTab,
+            contractorTab,
+            vendorTab
+        ]
         
         subtypeTabs = [
             subtypeTab0,

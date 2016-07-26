@@ -341,9 +341,13 @@
                     <connections>
                         <outlet property="cityTextField" destination="yVP-Qt-XaT" id="Xn0-vE-6Eg"/>
                         <outlet property="companyTextField" destination="BKq-sZ-cEB" id="X7E-xf-UOt"/>
+                        <outlet property="contractorTab" destination="gD2-F8-WwQ" id="hWH-dg-ced"/>
                         <outlet property="dateOfBirthTextField" destination="y4l-OO-ThK" id="v5u-Cl-A0P"/>
+                        <outlet property="employeeTab" destination="KF6-Iy-dL9" id="ofd-qN-hIR"/>
                         <outlet property="firstNameTextField" destination="WHs-2s-wxw" id="OLY-QY-OUB"/>
+                        <outlet property="guestTab" destination="C96-Uc-5xK" id="ASr-4t-pTS"/>
                         <outlet property="lastNameTextField" destination="Fur-LO-HeK" id="Dyf-Pp-Y1c"/>
+                        <outlet property="managerTab" destination="Lwm-QQ-Shx" id="O2N-cJ-YUr"/>
                         <outlet property="projectNumberTextField" destination="zVt-dx-yOB" id="d5z-Uk-8yD"/>
                         <outlet property="stateTextField" destination="RWa-bo-tyt" id="6ic-sI-T5f"/>
                         <outlet property="streetAddressTextField" destination="ix0-zm-MTH" id="Dh7-8W-Il6"/>
@@ -352,6 +356,7 @@
                         <outlet property="subtypeTab2" destination="HtC-Zc-nq5" id="mgw-ZV-XYk"/>
                         <outlet property="subtypeTab3" destination="sGO-bw-NsX" id="25J-CT-G6k"/>
                         <outlet property="subtypeTab4" destination="0qP-ta-BH0" id="B21-Em-Lff"/>
+                        <outlet property="vendorTab" destination="jJ9-Qb-9Zs" id="dVE-fB-fVA"/>
                         <outlet property="zipCodeTextField" destination="0Gk-LY-BjQ" id="sGv-ej-2Jy"/>
                     </connections>
                 </viewController>
