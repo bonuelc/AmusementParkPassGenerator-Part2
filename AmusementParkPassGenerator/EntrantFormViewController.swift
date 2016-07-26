@@ -16,8 +16,18 @@ class EntrantFormViewController: UIViewController {
     @IBOutlet weak var subtypeTab3: UIButton!
     @IBOutlet weak var subtypeTab4: UIButton!
     
+    var subtypeTabs: [UIButton]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        subtypeTabs = [
+            subtypeTab0,
+            subtypeTab1,
+            subtypeTab2,
+            subtypeTab3,
+            subtypeTab4
+        ]
     }
 
     func scan(entrant: EntrantType, accessType: AccessType) {
