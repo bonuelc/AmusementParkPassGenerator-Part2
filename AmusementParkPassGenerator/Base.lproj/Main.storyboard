@@ -339,11 +339,20 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <connections>
+                        <outlet property="cityTextField" destination="yVP-Qt-XaT" id="Xn0-vE-6Eg"/>
+                        <outlet property="companyTextField" destination="BKq-sZ-cEB" id="X7E-xf-UOt"/>
+                        <outlet property="dateOfBirthTextField" destination="y4l-OO-ThK" id="v5u-Cl-A0P"/>
+                        <outlet property="firstNameTextField" destination="WHs-2s-wxw" id="OLY-QY-OUB"/>
+                        <outlet property="lastNameTextField" destination="Fur-LO-HeK" id="Dyf-Pp-Y1c"/>
+                        <outlet property="projectNumberTextField" destination="zVt-dx-yOB" id="d5z-Uk-8yD"/>
+                        <outlet property="stateTextField" destination="RWa-bo-tyt" id="6ic-sI-T5f"/>
+                        <outlet property="streetAddressTextField" destination="ix0-zm-MTH" id="Dh7-8W-Il6"/>
                         <outlet property="subtypeTab0" destination="JUC-SA-HXM" id="6Ya-uj-TYH"/>
                         <outlet property="subtypeTab1" destination="8Em-Nt-GAK" id="9rp-gq-ylk"/>
                         <outlet property="subtypeTab2" destination="HtC-Zc-nq5" id="mgw-ZV-XYk"/>
                         <outlet property="subtypeTab3" destination="sGO-bw-NsX" id="25J-CT-G6k"/>
                         <outlet property="subtypeTab4" destination="0qP-ta-BH0" id="B21-Em-Lff"/>
+                        <outlet property="zipCodeTextField" destination="0Gk-LY-BjQ" id="sGv-ej-2Jy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3TN-mS-Wpo" sceneMemberID="firstResponder"/>

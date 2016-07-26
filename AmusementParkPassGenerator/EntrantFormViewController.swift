@@ -9,6 +9,16 @@
 import UIKit
 
 class EntrantFormViewController: UIViewController {
+    
+    @IBOutlet weak var dateOfBirthTextField: UITextField!
+    @IBOutlet weak var projectNumberTextField: UITextField!
+    @IBOutlet weak var firstNameTextField: UITextField!
+    @IBOutlet weak var lastNameTextField: UITextField!
+    @IBOutlet weak var companyTextField: UITextField!
+    @IBOutlet weak var streetAddressTextField: UITextField!
+    @IBOutlet weak var cityTextField: UITextField!
+    @IBOutlet weak var stateTextField: UITextField!
+    @IBOutlet weak var zipCodeTextField: UITextField!
 
     @IBOutlet weak var subtypeTab0: UIButton!
     @IBOutlet weak var subtypeTab1: UIButton!
