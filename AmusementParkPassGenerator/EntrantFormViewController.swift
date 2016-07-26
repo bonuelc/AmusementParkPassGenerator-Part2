@@ -85,4 +85,27 @@ class EntrantFormViewController: UIViewController {
         }
         showSubtabs(labels.count)
     }
+    
+    func disableUnrequiredTextFieldsForEntrant(entrant: EntrantType) {
+
+        enableTextFields(dateOfBirthTextField, enabled: entrant is BirthdayWishable)
+        enableTextFields(projectNumberTextField, enabled: entrant is ContractEmployeeType)
+        enableTextFields(firstNameTextField, lastNameTextField, enabled: entrant is Nameable)
+        enableTextFields(companyTextField, enabled: entrant is VendorType)
+        enableTextFields(streetAddressTextField, cityTextField, stateTextField, zipCodeTextField, enabled: entrant is Addressable)
+    }
+    
+    func enableTextFields(textFields: UITextField..., enabled: Bool) {
+        
+        for textField in textFields {
+            if enabled {
+                textField.alpha = 1.0
+                textField.enabled = true
+            } else {
+                textField.alpha = 0.5
+                textField.enabled = false
+                textField.text = ""
+            }
+        }
+    }
 }
