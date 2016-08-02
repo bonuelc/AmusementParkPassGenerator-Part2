@@ -10,6 +10,7 @@
 		852335821D3D6ED700E195C4 /* Scanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852335811D3D6ED700E195C4 /* Scanner.swift */; };
 		852335851D3DDFCD00E195C4 /* AccessDenied.wav in Resources */ = {isa = PBXBuildFile; fileRef = 852335831D3DDFCD00E195C4 /* AccessDenied.wav */; };
 		852335861D3DDFCD00E195C4 /* AccessGranted.wav in Resources */ = {isa = PBXBuildFile; fileRef = 852335841D3DDFCD00E195C4 /* AccessGranted.wav */; };
+		857209731D513E70004A4EF0 /* DummyEntrantFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857209721D513E6F004A4EF0 /* DummyEntrantFactory.swift */; };
 		85B5E8811D395F550083CA31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B5E8801D395F550083CA31 /* AppDelegate.swift */; };
 		85B5E8831D395F550083CA31 /* EntrantFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B5E8821D395F550083CA31 /* EntrantFormViewController.swift */; };
 		85B5E8861D395F550083CA31 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85B5E8841D395F550083CA31 /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 		852335811D3D6ED700E195C4 /* Scanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scanner.swift; sourceTree = "<group>"; };
 		852335831D3DDFCD00E195C4 /* AccessDenied.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = AccessDenied.wav; sourceTree = "<group>"; };
 		852335841D3DDFCD00E195C4 /* AccessGranted.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = AccessGranted.wav; sourceTree = "<group>"; };
+		857209721D513E6F004A4EF0 /* DummyEntrantFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyEntrantFactory.swift; sourceTree = "<group>"; };
 		85B5E87D1D395F550083CA31 /* AmusementParkPassGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AmusementParkPassGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85B5E8801D395F550083CA31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85B5E8821D395F550083CA31 /* EntrantFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntrantFormViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 		85DAD28B1D466BFC001E7EF5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				857209721D513E6F004A4EF0 /* DummyEntrantFactory.swift */,
 				85B5E8921D3974610083CA31 /* EntrantModel.swift */,
 			);
 			name = Model;
@@ -195,6 +198,7 @@
 			files = (
 				85B5E8831D395F550083CA31 /* EntrantFormViewController.swift in Sources */,
 				85B5E8811D395F550083CA31 /* AppDelegate.swift in Sources */,
+				857209731D513E70004A4EF0 /* DummyEntrantFactory.swift in Sources */,
 				852335821D3D6ED700E195C4 /* Scanner.swift in Sources */,
 				85B5E8931D3974610083CA31 /* EntrantModel.swift in Sources */,
 			);
