@@ -41,6 +41,8 @@ class EntrantFormViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        enableTextFields(projectNumberTextField, companyTextField, enabled: false)
+        
         typeTabs = [
             guestTab,
             employeeTab,
@@ -157,9 +159,7 @@ class EntrantFormViewController: UIViewController {
     func disableUnrequiredTextFieldsForEntrant(entrant: EntrantType) {
 
         enableTextFields(dateOfBirthTextField, enabled: entrant is BirthdayWishable)
-        enableTextFields(projectNumberTextField, enabled: entrant is ContractEmployeeType)
         enableTextFields(firstNameTextField, lastNameTextField, enabled: entrant is Nameable)
-        enableTextFields(companyTextField, enabled: entrant is VendorType)
         enableTextFields(streetAddressTextField, cityTextField, stateTextField, zipCodeTextField, enabled: entrant is Addressable)
     }
     
