@@ -64,22 +64,27 @@ class EntrantFormViewController: UIViewController {
     
     @IBAction func guestTabTapped(sender: UIButton) {
         labelSubtabs("Classic", "VIP", "Free Child", "Season Pass", "Senior")
+        entrantSubtypeTapped(sender)
     }
     
     @IBAction func employeeTabTapped(sender: UIButton) {
         labelSubtabs("Food Services", "Ride Services", "Maintenance")
+        entrantSubtypeTapped(sender)
     }
     
     @IBAction func managerTabTapped(sender: UIButton) {
         labelSubtabs(" ")
+        entrantSubtypeTapped(sender)
     }
 
     @IBAction func contractorTabTapped(sender: UIButton) {
         labelSubtabs("1001", "1002", "1003", "2001", "2002")
+        entrantSubtypeTapped(sender)
     }
     
     @IBAction func vendorTabTapped(sender: UIButton) {
         labelSubtabs("Acme", "Orkin", "Fedex", "NW Electrical")
+        entrantSubtypeTapped(sender)
     }
     
     @IBAction func entrantSubtypeTapped(sender: UIButton) {
@@ -92,7 +97,7 @@ class EntrantFormViewController: UIViewController {
         
         switch tabText {
         // Guest types
-        case "Classic":
+        case "Classic", "Guest":
             entrant = def.dummyGuest(.Classic)
         case "VIP":
             entrant = def.dummyGuest(.VIP)
@@ -103,31 +108,26 @@ class EntrantFormViewController: UIViewController {
         case "Senior":
             entrant = def.dummyGuest(.Senior)
         // Employee types
-        case "Food Services":
+        case "Food Services", "Employee":
             entrant = def.dummyEmployee(.FoodServices)
         case "Ride Services":
             entrant = def.dummyEmployee(.RideServices)
         case "Maintenance":
             entrant = def.dummyEmployee(.Maintenance)
-        case "1001", "1002", "1003", "2001", "2002":
-            projectNumberTextField.text = tabText
-            
-            guard let projectNumber = Int(tabText), contractProjectNumber = ContractorProjectNumber(rawValue: projectNumber) else {
-                print("Invalid project number")
-                return
+        case "1001", "1002", "1003", "2001", "2002", "Contractor":
+            let contractProjectNumber: ContractorProjectNumber!
+            if let projectNumber = Int(tabText) {
+                contractProjectNumber = ContractorProjectNumber(rawValue: projectNumber)
+            } else {
+                contractProjectNumber = .P1001
             }
-
+            projectNumberTextField.text = contractProjectNumber.rawValue.description
             entrant = def.dummyContractor(contractProjectNumber)
-        case " ": entrant = def.dummyEmployee(.Manager)
+        case " ", "Manager": entrant = def.dummyEmployee(.Manager)
         // Vendor types
-        case "Acme", "Orkin", "Fedex", "NW Electrical":
-            companyTextField.text = tabText
-            
-            guard let vendorName = VendorName(rawValue: tabText) else {
-                print("Invalid vendor name")
-                return
-            }
-            
+        case "Acme", "Orkin", "Fedex", "NW Electrical", "Vendor":
+            let vendorName = VendorName(rawValue: tabText) ?? VendorName.Acme
+            companyTextField.text = vendorName.rawValue
             entrant = def.dummyVendor(vendorName)
         default: print("Tab not recognized")
         }
