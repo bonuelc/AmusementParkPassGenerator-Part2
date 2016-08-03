@@ -36,6 +36,8 @@ class EntrantFormViewController: UIViewController {
     
     var subtypeTabs: [UIButton]!
     
+    var entrant: EntrantType!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -81,6 +83,56 @@ class EntrantFormViewController: UIViewController {
     }
     
     @IBAction func entrantSubtypeTapped(sender: UIButton) {
+        
+        guard let tabText = sender.titleLabel?.text else {
+            return
+        }
+        
+        let def = DummyEntrantFactory.sharedInstance
+        
+        switch tabText {
+        // Guest types
+        case "Classic":
+            entrant = def.dummyGuest(.Classic)
+        case "VIP":
+            entrant = def.dummyGuest(.VIP)
+        case "Free Child":
+            entrant = def.dummyGuest(.FreeChild)
+        case "Season Pass":
+            entrant = def.dummyGuest(.SeasonPass)
+        case "Senior":
+            entrant = def.dummyGuest(.Senior)
+        // Employee types
+        case "Food Services":
+            entrant = def.dummyEmployee(.FoodServices)
+        case "Ride Services":
+            entrant = def.dummyEmployee(.RideServices)
+        case "Maintenance":
+            entrant = def.dummyEmployee(.Maintenance)
+        case "1001", "1002", "1003", "2001", "2002":
+            projectNumberTextField.text = tabText
+            
+            guard let projectNumber = Int(tabText), contractProjectNumber = ContractorProjectNumber(rawValue: projectNumber) else {
+                print("Invalid project number")
+                return
+            }
+
+            entrant = def.dummyContractor(contractProjectNumber)
+        case " ": entrant = def.dummyEmployee(.Manager)
+        // Vendor types
+        case "Acme", "Orkin", "Fedex", "NW Electrical":
+            companyTextField.text = tabText
+            
+            guard let vendorName = VendorName(rawValue: tabText) else {
+                print("Invalid vendor name")
+                return
+            }
+            
+            entrant = def.dummyVendor(vendorName)
+        default: print("Tab not recognized")
+        }
+        
+        disableUnrequiredTextFieldsForEntrant(entrant)
     }
     
     // MARK: Helper methods
