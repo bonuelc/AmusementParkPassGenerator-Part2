@@ -137,6 +137,37 @@ class EntrantFormViewController: UIViewController {
         disableUnrequiredTextFieldsForEntrant(entrant)
     }
     
+    @IBAction func populateDataButtonTapped() {
+        
+        if dateOfBirthTextField.enabledAndEmpty {
+            dateOfBirthTextField.text = "05/12/55"
+        }
+        
+        if firstNameTextField.enabledAndEmpty {
+            firstNameTextField.text = "Homer"
+        }
+        
+        if lastNameTextField.enabledAndEmpty {
+            lastNameTextField.text = "Simpson"
+        }
+        
+        if streetAddressTextField.enabledAndEmpty {
+            streetAddressTextField.text = "742 Evergreen Terrace"
+        }
+        
+        if cityTextField.enabledAndEmpty {
+            cityTextField.text = "Springfield"
+        }
+        
+        if stateTextField.enabledAndEmpty {
+            stateTextField.text = "OR"
+        }
+        
+        if zipCodeTextField.enabledAndEmpty {
+            zipCodeTextField.text = "97477"
+        }
+    }
+    
     // MARK: Helper methods
     
     func showSubtabs(count: Int) {
@@ -175,5 +206,13 @@ class EntrantFormViewController: UIViewController {
                 textField.text = ""
             }
         }
+    }
+}
+
+// MARK: extension UITextField
+
+extension UITextField {
+    var enabledAndEmpty: Bool {
+        return self.enabled && self.text == ""
     }
 }
