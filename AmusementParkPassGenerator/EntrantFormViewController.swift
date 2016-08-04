@@ -137,6 +137,25 @@ class EntrantFormViewController: UIViewController {
         disableUnrequiredTextFieldsForEntrant(entrant)
     }
     
+    @IBAction func generatePassButtonTapped() {
+        
+        if dateOfBirthTextField.enabledAndEmpty ||
+            firstNameTextField.enabledAndEmpty ||
+            lastNameTextField.enabledAndEmpty ||
+            streetAddressTextField.enabledAndEmpty ||
+            cityTextField.enabledAndEmpty ||
+            stateTextField.enabledAndEmpty ||
+            zipCodeTextField.enabledAndEmpty {
+            
+            let alert = UIAlertController(title: "Cannot generate pass", message: "Please fill out all available fields.", preferredStyle: .Alert)
+            let action = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            alert.addAction(action)
+            presentViewController(alert, animated: true, completion: nil)
+        }
+        
+        // TODO: Segue to next VC
+    }
+    
     @IBAction func populateDataButtonTapped() {
         
         if dateOfBirthTextField.enabledAndEmpty {

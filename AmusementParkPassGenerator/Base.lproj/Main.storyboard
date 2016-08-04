@@ -206,6 +206,9 @@
                                 <state key="normal" title="Generate Pass">
                                     <color key="titleColor" red="0.92156862750000001" green="0.90588235289999997" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="generatePassButtonTapped" destination="7Q3-OL-Vix" eventType="touchUpInside" id="n5P-X7-BNe"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y4l-OO-ThK">
                                 <rect key="frame" x="20" y="187" width="354" height="55"/>
