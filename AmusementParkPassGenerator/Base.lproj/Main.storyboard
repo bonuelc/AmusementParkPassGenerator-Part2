@@ -544,6 +544,13 @@
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                    <connections>
+                        <outlet property="header0Label" destination="3bu-8y-fdA" id="s0h-bt-Tta"/>
+                        <outlet property="header1Label" destination="0jO-Ah-z0z" id="Req-MR-KPs"/>
+                        <outlet property="perk0Label" destination="fZc-ta-tsR" id="DRh-i7-xbF"/>
+                        <outlet property="perk1Label" destination="5IO-HR-CHT" id="GZ4-ev-1Mc"/>
+                        <outlet property="perk2Label" destination="QoW-yp-heB" id="QW1-Vi-LnB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dWA-Db-jqa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

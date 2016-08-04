@@ -10,6 +10,12 @@ import UIKit
 
 class EntrantPassViewController: UIViewController {
 
+    @IBOutlet weak var header0Label: UILabel!
+    @IBOutlet weak var header1Label: UILabel!
+    @IBOutlet weak var perk2Label: UILabel!
+    @IBOutlet weak var perk1Label: UILabel!
+    @IBOutlet weak var perk0Label: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
