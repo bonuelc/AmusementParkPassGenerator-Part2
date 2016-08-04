@@ -370,10 +370,10 @@
             </objects>
             <point key="canvasLocation" x="700" y="536"/>
         </scene>
-        <!--View Controller-->
+        <!--Entrant Pass View Controller-->
         <scene sceneID="Kir-h9-SjX">
             <objects>
-                <viewController id="SKL-8G-Idd" sceneMemberID="viewController">
+                <viewController id="SKL-8G-Idd" customClass="EntrantPassViewController" customModule="AmusementParkPassGenerator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4Rn-7M-flq"/>
                         <viewControllerLayoutGuide type="bottom" id="Ad8-nu-Vjz"/>
