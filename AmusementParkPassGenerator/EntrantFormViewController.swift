@@ -64,6 +64,12 @@ class EntrantFormViewController: UIViewController {
         Scanner.scan(entrant, accessType: accessType)
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let epVC = segue.destinationViewController as? EntrantPassViewController {
+            epVC.entrant = entrant
+        }
+    }
+    
     @IBAction func guestTabTapped(sender: UIButton) {
         labelSubtabs("Classic", "VIP", "Free Child", "Season Pass", "Senior")
         entrantSubtypeTapped(sender)
