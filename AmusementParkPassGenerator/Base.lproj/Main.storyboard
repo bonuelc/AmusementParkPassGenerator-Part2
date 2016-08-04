@@ -208,6 +208,7 @@
                                 </state>
                                 <connections>
                                     <action selector="generatePassButtonTapped" destination="7Q3-OL-Vix" eventType="touchUpInside" id="n5P-X7-BNe"/>
+                                    <segue destination="SKL-8G-Idd" kind="show" id="pTm-EU-IFW"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y4l-OO-ThK">
