@@ -34,12 +34,16 @@ enum FullAddressError: ErrorType {
     case EmptyStreetAddress
     case EmptyCity
     case EmptyState
+    case EmptyZipCode
+    case InvalidZipCode
     
     var alertTitle: String {
         switch self {
         case .EmptyStreetAddress: return "Street address entry is blank"
         case .EmptyCity: return "City entry is blank"
         case .EmptyState: return "State entry is blank"
+        case .EmptyZipCode: return "Zip code entry is blank"
+        case .InvalidZipCode: return "Zip code entry is invalid"
         }
     }
     
@@ -48,6 +52,8 @@ enum FullAddressError: ErrorType {
         case .EmptyStreetAddress: return "Please fill in street address"
         case .EmptyCity: return "Please fill in city"
         case .EmptyState: return "Please fill in state"
+        case .EmptyZipCode: return "Please fill in zip code"
+        case .InvalidZipCode: return "Please fill in a valid zip code"
         }
     }
 }
@@ -97,6 +103,19 @@ struct FullAddress {
         self.city = city
         self.state = state
         self.zipCode = zipCode
+    }
+    
+    init(streetAddress: String, city: String, state: String, zipCode: String) throws {
+    
+        if zipCode.isEmpty {
+            throw FullAddressError.EmptyZipCode
+        }
+        
+        guard let zipCode = Int(zipCode) else {
+            throw FullAddressError.InvalidZipCode
+        }
+        
+        try self.init(streetAddress: streetAddress, city: city, state: state, zipCode: zipCode)
     }
 }
 
