@@ -155,11 +155,17 @@ class EntrantFormViewController: UIViewController {
             }
         }
         
-        if dateOfBirthTextField.enabledAndEmpty ||
-            streetAddressTextField.enabledAndEmpty ||
-            cityTextField.enabledAndEmpty ||
-            stateTextField.enabledAndEmpty ||
-            zipCodeTextField.enabledAndEmpty {
+        if var person = entrant as? Addressable {
+            do {
+                person.fullAddress = try FullAddress(streetAddress: streetAddressTextField.text!, city: cityTextField.text!, state: stateTextField.text!, zipCode: Int(zipCodeTextField.text!)!)
+            } catch let error as FullAddressError {
+                presentAlertController(title: error.alertTitle, message: error.alertMessage)
+            } catch let error {
+                print(error)
+            }
+        }
+        
+        if dateOfBirthTextField.enabledAndEmpty {
             presentAlertController(title: "Cannot generate pass", message: "Please fill out all available fields.")
         }
         
