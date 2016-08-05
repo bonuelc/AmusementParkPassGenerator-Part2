@@ -9,12 +9,25 @@
 
 import Foundation
 
-
 // MARK: Wrapper Structs
 
 enum FullNameError: ErrorType {
     case EmptyFirstName
     case EmptyLastName
+    
+    var alertTitle: String {
+        switch self {
+        case .EmptyFirstName: return "First name entry is blank"
+        case .EmptyLastName: return "Last name entry is blank"
+        }
+    }
+    
+    var alertMessage: String {
+        switch self {
+        case .EmptyFirstName: return "Please fill in first name"
+        case .EmptyLastName: return "Please fill in last name"
+        }
+    }
 }
 
 enum FullAddressError: ErrorType {
