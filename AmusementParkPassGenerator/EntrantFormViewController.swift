@@ -205,6 +205,26 @@ class EntrantFormViewController: UIViewController {
     
     // MARK: Helper methods
     
+    func parseDateOfBirthTextField() throws -> NSDate {
+        
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "dd/MM/yy"
+        
+        if let dateString = dateOfBirthTextField.text, birthday = formatter.dateFromString(dateString) {
+            
+            if entrant is FreeChildGuest && NSDate.numYearsOld(birthday) >= 5 {
+                throw BirthdayError.TooOldForDiscount
+            } else if entrant is SeniorGuest && NSDate.numYearsOld(birthday) < 65 {
+                throw BirthdayError.TooYoungForDiscount
+            }
+            
+            return birthday
+            
+        } else {
+            throw BirthdayError.InvalidBirthday
+        }
+    }
+    
     func presentAlertController(title title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
         let action = UIAlertAction(title: "OK", style: .Default, handler: nil)
