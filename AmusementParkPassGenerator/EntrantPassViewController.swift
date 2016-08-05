@@ -23,6 +23,10 @@ class EntrantPassViewController: UIViewController {
         configurePass()
     }
     
+    @IBAction func createNewPassButtonTapped() {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     func configurePass() {
         if let person = entrant as? Nameable {
             header1Label.text = "\(person.fullName)"
