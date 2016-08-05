@@ -202,6 +202,21 @@ enum BirthdayError: ErrorType {
     case InvalidBirthday
     case TooOldForDiscount
     case TooYoungForDiscount
+    
+    var alertTitle: String {
+        switch self {
+        case .InvalidBirthday: return "Invalid birthday"
+        case .TooYoungForDiscount: return "Too young for senior discount"
+        case .TooOldForDiscount: return "Too old for free child discount"
+        }
+    }
+    
+    var alertMessage: String {
+        switch self {
+        case .InvalidBirthday: return "Please re-enter birthday"
+        case .TooYoungForDiscount, .TooOldForDiscount: return "Plase choose another guest pass"
+        }
+    }
 }
 
 class FreeChildGuest: GuestType, BirthdayWishable {
