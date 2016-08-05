@@ -165,8 +165,14 @@ class EntrantFormViewController: UIViewController {
             }
         }
         
-        if dateOfBirthTextField.enabledAndEmpty {
-            presentAlertController(title: "Cannot generate pass", message: "Please fill out all available fields.")
+        if var person = entrant as? BirthdayWishable {
+            do {
+                person.dateOfBirth = try parseDateOfBirthTextField()
+            } catch let error as BirthdayError {
+                presentAlertController(title: error.alertTitle, message: error.alertMessage)
+            } catch let error {
+                print(error)
+            }
         }
         
         // TODO: Segue to next VC
