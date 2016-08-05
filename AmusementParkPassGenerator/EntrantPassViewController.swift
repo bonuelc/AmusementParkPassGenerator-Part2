@@ -20,5 +20,12 @@ class EntrantPassViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configurePass()
+    }
+    
+    func configurePass() {
+        if let person = entrant as? Nameable {
+            header1Label.text = "\(person.fullName)"
+        }
     }
 }
