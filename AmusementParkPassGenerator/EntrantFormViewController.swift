@@ -149,10 +149,7 @@ class EntrantFormViewController: UIViewController {
             do {
                 person.fullName = try FullName(firstName: firstNameTextField.text!, lastName: lastNameTextField.text!)
             } catch let error as FullNameError {
-                let alert = UIAlertController(title: error.alertTitle, message: error.alertMessage, preferredStyle: .Alert)
-                let action = UIAlertAction(title: "OK", style: .Default, handler: nil)
-                alert.addAction(action)
-                presentViewController(alert, animated: true, completion: nil)
+                presentAlertController(title: error.alertTitle, message: error.alertMessage)
             } catch let error {
                 print(error)
             }
@@ -163,11 +160,7 @@ class EntrantFormViewController: UIViewController {
             cityTextField.enabledAndEmpty ||
             stateTextField.enabledAndEmpty ||
             zipCodeTextField.enabledAndEmpty {
-            
-            let alert = UIAlertController(title: "Cannot generate pass", message: "Please fill out all available fields.", preferredStyle: .Alert)
-            let action = UIAlertAction(title: "OK", style: .Default, handler: nil)
-            alert.addAction(action)
-            presentViewController(alert, animated: true, completion: nil)
+            presentAlertController(title: "Cannot generate pass", message: "Please fill out all available fields.")
         }
         
         // TODO: Segue to next VC
@@ -205,6 +198,13 @@ class EntrantFormViewController: UIViewController {
     }
     
     // MARK: Helper methods
+    
+    func presentAlertController(title title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        let action = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        alert.addAction(action)
+        presentViewController(alert, animated: true, completion: nil)
+    }
     
     func showSubtabs(count: Int) {
         for i in 0..<count {
