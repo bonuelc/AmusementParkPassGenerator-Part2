@@ -121,15 +121,15 @@ protocol MerchandiseDiscountAccessible: DiscountAccessible {
 // MARK: Required Personal/Business Information Protocols
 
 protocol Nameable {
-    var fullName: FullName { get }
+    var fullName: FullName { get set }
 }
 
 protocol Addressable {
-    var fullAddress: FullAddress { get }
+    var fullAddress: FullAddress { get set }
 }
 
 protocol BirthdayWishable {
-    var dateOfBirth: NSDate { get }
+    var dateOfBirth: NSDate { get set }
 }
 
 protocol VisitDateable {
@@ -210,18 +210,18 @@ extension NSDate {
 }
 
 struct SeasonPassGuest: GuestType, SkipAllRideLinesAcessible, FoodDiscountAccessible, MerchandiseDiscountAccessible, Nameable, Addressable {
-    let fullName: FullName
-    let fullAddress: FullAddress
+    var fullName: FullName
+    var fullAddress: FullAddress
     let foodDiscountPercent: Int = 10
     let merchandiseDiscountPercent: Int = 20
 }
 
 struct SeniorGuest: GuestType, SkipAllRideLinesAcessible, FoodDiscountAccessible, MerchandiseDiscountAccessible, Nameable, BirthdayWishable {
     
-    let dateOfBirth: NSDate
+    var dateOfBirth: NSDate
     
-    let fullName: FullName
-    let fullAddress: FullAddress
+    var fullName: FullName
+    var fullAddress: FullAddress
     let foodDiscountPercent: Int = 10
     let merchandiseDiscountPercent: Int = 10
     
@@ -244,8 +244,8 @@ struct SeniorGuest: GuestType, SkipAllRideLinesAcessible, FoodDiscountAccessible
 // Employees
 
 class FullTimeEmployee: FullTimeEmployeeType {
-    let fullName: FullName
-    let fullAddress: FullAddress
+    var fullName: FullName
+    var fullAddress: FullAddress
     var foodDiscountPercent: Int = 15
     var merchandiseDiscountPercent: Int = 25
     
@@ -297,8 +297,8 @@ struct ContractEmployeeFactory {
 }
 
 class ContractEmployee: ContractEmployeeType {
-    let fullName: FullName
-    let fullAddress: FullAddress
+    var fullName: FullName
+    var fullAddress: FullAddress
     
     init(fullName: FullName, fullAddress: FullAddress) {
         self.fullName = fullName
@@ -351,12 +351,12 @@ struct VendorFactory {
 }
 
 class Vendor: VendorType {
-    let fullName: FullName
-    let fullAddress: FullAddress
+    var fullName: FullName
+    var fullAddress: FullAddress
     
     var dateOfVisit: NSDate?
     
-    let dateOfBirth: NSDate
+    var dateOfBirth: NSDate
     
     init (fullName: FullName, fullAddress: FullAddress, birthMonth: Int, birthDay:  Int, birthYear: Int) throws {
         guard let birthday = NSCalendar.currentCalendar().dateWithEra(1, year: birthYear, month: birthMonth, day: birthDay, hour: 0, minute: 0, second: 0, nanosecond: 0) else {
