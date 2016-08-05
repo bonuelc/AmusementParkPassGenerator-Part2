@@ -34,6 +34,22 @@ enum FullAddressError: ErrorType {
     case EmptyStreetAddress
     case EmptyCity
     case EmptyState
+    
+    var alertTitle: String {
+        switch self {
+        case .EmptyStreetAddress: return "Street address entry is blank"
+        case .EmptyCity: return "City entry is blank"
+        case .EmptyState: return "State entry is blank"
+        }
+    }
+    
+    var alertMessage: String {
+        switch self {
+        case .EmptyStreetAddress: return "Please fill in street address"
+        case .EmptyCity: return "Please fill in city"
+        case .EmptyState: return "Please fill in state"
+        }
+    }
 }
 
 struct FullName: CustomStringConvertible {
