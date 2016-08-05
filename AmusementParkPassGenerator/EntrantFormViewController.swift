@@ -157,7 +157,7 @@ class EntrantFormViewController: UIViewController {
         
         if var person = entrant as? Addressable {
             do {
-                person.fullAddress = try FullAddress(streetAddress: streetAddressTextField.text!, city: cityTextField.text!, state: stateTextField.text!, zipCode: Int(zipCodeTextField.text!)!)
+                person.fullAddress = try FullAddress(streetAddress: streetAddressTextField.text!, city: cityTextField.text!, state: stateTextField.text!, zipCode: zipCodeTextField.text!)
             } catch let error as FullAddressError {
                 presentAlertController(title: error.alertTitle, message: error.alertMessage)
             } catch let error {
