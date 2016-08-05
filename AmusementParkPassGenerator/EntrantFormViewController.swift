@@ -145,9 +145,20 @@ class EntrantFormViewController: UIViewController {
     
     @IBAction func generatePassButtonTapped() {
         
+        if var person = entrant as? Nameable {
+            do {
+                person.fullName = try FullName(firstName: firstNameTextField.text!, lastName: lastNameTextField.text!)
+            } catch let error as FullNameError {
+                let alert = UIAlertController(title: error.alertTitle, message: error.alertMessage, preferredStyle: .Alert)
+                let action = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                alert.addAction(action)
+                presentViewController(alert, animated: true, completion: nil)
+            } catch let error {
+                print(error)
+            }
+        }
+        
         if dateOfBirthTextField.enabledAndEmpty ||
-            firstNameTextField.enabledAndEmpty ||
-            lastNameTextField.enabledAndEmpty ||
             streetAddressTextField.enabledAndEmpty ||
             cityTextField.enabledAndEmpty ||
             stateTextField.enabledAndEmpty ||
