@@ -190,10 +190,10 @@ protocol VendorType: EntrantType, Nameable, BirthdayWishable, VisitDateable {
 
 // Guests
 
-struct ClassicGuest: GuestType {
+class ClassicGuest: GuestType {
 }
 
-struct VIPGuest: GuestType, SkipAllRideLinesAcessible, FoodDiscountAccessible, MerchandiseDiscountAccessible {
+class VIPGuest: GuestType, SkipAllRideLinesAcessible, FoodDiscountAccessible, MerchandiseDiscountAccessible {
     let foodDiscountPercent: Int = 10
     let merchandiseDiscountPercent: Int = 20
 }
@@ -204,7 +204,7 @@ enum BirthdayError: ErrorType {
     case TooYoungForDiscount
 }
 
-struct FreeChildGuest: GuestType, BirthdayWishable {
+class FreeChildGuest: GuestType, BirthdayWishable {
     
     var dateOfBirth: NSDate
     
@@ -238,14 +238,19 @@ extension NSDate {
     }
 }
 
-struct SeasonPassGuest: GuestType, SkipAllRideLinesAcessible, FoodDiscountAccessible, MerchandiseDiscountAccessible, Nameable, Addressable {
+class SeasonPassGuest: GuestType, SkipAllRideLinesAcessible, FoodDiscountAccessible, MerchandiseDiscountAccessible, Nameable, Addressable {
     var fullName: FullName
     var fullAddress: FullAddress
     let foodDiscountPercent: Int = 10
     let merchandiseDiscountPercent: Int = 20
+    
+    init(fullName: FullName, fullAddress: FullAddress) {
+        self.fullName = fullName
+        self.fullAddress = fullAddress
+    }
 }
 
-struct SeniorGuest: GuestType, SkipAllRideLinesAcessible, FoodDiscountAccessible, MerchandiseDiscountAccessible, Nameable, BirthdayWishable {
+class SeniorGuest: GuestType, SkipAllRideLinesAcessible, FoodDiscountAccessible, MerchandiseDiscountAccessible, Nameable, BirthdayWishable {
     
     var dateOfBirth: NSDate
     
