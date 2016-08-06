@@ -37,6 +37,7 @@ class EntrantFormViewController: UIViewController {
     var subtypeTabs: [UIButton]!
     
     var entrant: EntrantType!
+    var passDescription: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -107,21 +108,29 @@ class EntrantFormViewController: UIViewController {
         // Guest types
         case "Classic", "Guest":
             entrant = def.dummyGuest(.Classic)
+            passDescription = Guest.Classic.passDescription
         case "VIP":
             entrant = def.dummyGuest(.VIP)
+            passDescription = Guest.VIP.passDescription
         case "Free Child":
             entrant = def.dummyGuest(.FreeChild)
+            passDescription = Guest.FreeChild.passDescription
         case "Season Pass":
             entrant = def.dummyGuest(.SeasonPass)
+            passDescription = Guest.SeasonPass.passDescription
         case "Senior":
             entrant = def.dummyGuest(.Senior)
+            passDescription = Guest.Senior.passDescription
         // Employee types
         case "Food Services", "Employee":
             entrant = def.dummyEmployee(.FoodServices)
+            passDescription = Employee.FoodServices.passDescription
         case "Ride Services":
             entrant = def.dummyEmployee(.RideServices)
+            passDescription = Employee.RideServices.passDescription
         case "Maintenance":
             entrant = def.dummyEmployee(.Maintenance)
+            passDescription = Employee.Maintenance.passDescription
         case "1001", "1002", "1003", "2001", "2002", "Contractor":
             let contractProjectNumber: ContractorProjectNumber!
             if let projectNumber = Int(tabText) {
@@ -131,12 +140,16 @@ class EntrantFormViewController: UIViewController {
             }
             projectNumberTextField.text = contractProjectNumber.rawValue.description
             entrant = def.dummyContractor(contractProjectNumber)
-        case " ", "Manager": entrant = def.dummyEmployee(.Manager)
+            passDescription = contractProjectNumber.passDescription
+        case " ", "Manager":
+            entrant = def.dummyEmployee(.Manager)
+            passDescription = Employee.Manager.passDescription
         // Vendor types
         case "Acme", "Orkin", "Fedex", "NW Electrical", "Vendor":
             let vendorName = VendorName(rawValue: tabText) ?? VendorName.Acme
             companyTextField.text = vendorName.rawValue
             entrant = def.dummyVendor(vendorName)
+            passDescription = vendorName.passDescription
         default: print("Tab not recognized")
         }
         
