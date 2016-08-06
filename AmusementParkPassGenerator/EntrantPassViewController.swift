@@ -34,6 +34,7 @@ class EntrantPassViewController: UIViewController {
     func configurePass() {
         setHeaders()
         getPerks()
+        setPerkLabels()
     }
     
     func setHeaders() {
@@ -66,5 +67,11 @@ class EntrantPassViewController: UIViewController {
         } else {
             perks.append("")
         }
+    }
+    
+    func setPerkLabels() {
+        perk2Label.text = perks[2]
+        perk1Label.text = perks[1]
+        perk0Label.text = perks[0]
     }
 }
