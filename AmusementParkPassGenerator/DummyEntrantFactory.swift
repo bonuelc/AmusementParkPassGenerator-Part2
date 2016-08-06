@@ -6,25 +6,42 @@
 //  Copyright © 2016 Christopher Bonuel. All rights reserved.
 //
 
-enum Guest {
-    case Classic, VIP, SeasonPass, FreeChild, Senior
+enum Guest: String {
+    case Classic, VIP, Senior
+    case SeasonPass = "Season"
+    case FreeChild = "Free Child"
+    
+    var passDescription: String {
+        return "\(self.rawValue) Guest Pass"
+    }
 }
 
-enum Employee {
-    case FoodServices
-    case RideServices
-    case Maintenance
-    case Manager
+enum Employee: String {
+    case Maintenance, Manager
+    case FoodServices = "Food Services"
+    case RideServices = "Ride Services"
+    
+    var passDescription: String {
+        return "Employee Pass - \(self.rawValue)"
+    }
 }
 
 enum ContractorProjectNumber: Int {
     case P1001 = 1001, P1002, P1003
     case P2001 = 2001, P2002
+    
+    var passDescription: String {
+        return "Contractor Pass - Project #\(self.rawValue)"
+    }
 }
 
 enum VendorName: String {
     case Acme, Orkin, Fedex
     case NWElectrical = "NW Electrical"
+    
+    var passDescription: String {
+        return "Vendor Pass - \(self.rawValue)"
+    }
 }
 
 class DummyEntrantFactory {
