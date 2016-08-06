@@ -18,6 +18,7 @@ class EntrantPassViewController: UIViewController {
     
     var entrant: EntrantType!
     var passDescription: String!
+    var perks: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +33,7 @@ class EntrantPassViewController: UIViewController {
     
     func configurePass() {
         setHeaders()
+        getPerks()
     }
     
     func setHeaders() {
@@ -42,6 +44,27 @@ class EntrantPassViewController: UIViewController {
         } else {
             header0Label.text = passDescription
             header1Label.text = ""
+        }
+    }
+    
+    func getPerks() {
+        
+        if entrant is AllRidesAcesssible {
+            perks.append("• Unlimited Rides")
+        } else {
+            perks.append("")
+        }
+        
+        if let person = entrant as? FoodDiscountAccessible {
+            perks.append("• \(person.foodDiscountPercent)% Food Discount")
+        } else {
+            perks.append("")
+        }
+        
+        if let person = entrant as? MerchandiseDiscountAccessible {
+            perks.append("• \(person.merchandiseDiscountPercent)% Merchandise Discount")
+        } else {
+            perks.append("")
         }
     }
 }
