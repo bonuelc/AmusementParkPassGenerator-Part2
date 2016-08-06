@@ -28,9 +28,20 @@ class EntrantPassViewController: UIViewController {
         dismissViewControllerAnimated(true, completion: nil)
     }
     
+    // MARK: Helper methods
+    
     func configurePass() {
+        setHeaders()
+    }
+    
+    func setHeaders() {
+        
         if let person = entrant as? Nameable {
-            header1Label.text = "\(person.fullName)"
+            header0Label.text = "\(person.fullName)"
+            header1Label.text = passDescription
+        } else {
+            header0Label.text = passDescription
+            header1Label.text = ""
         }
     }
 }
