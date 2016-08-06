@@ -68,6 +68,7 @@ class EntrantFormViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let epVC = segue.destinationViewController as? EntrantPassViewController {
             epVC.entrant = entrant
+            epVC.passDescription = passDescription
         }
     }
     

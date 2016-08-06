@@ -17,6 +17,7 @@ class EntrantPassViewController: UIViewController {
     @IBOutlet weak var perk0Label: UILabel!
     
     var entrant: EntrantType!
+    var passDescription: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
