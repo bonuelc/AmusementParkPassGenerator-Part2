@@ -105,6 +105,11 @@ class EntrantFormViewController: UIViewController {
         
         let def = DummyEntrantFactory.sharedInstance
         
+        // reset these fields since they aren't being reset automatically
+        // by disableUnrequiredTextFieldsForEntrant()
+        projectNumberTextField.text = ""
+        companyTextField.text = ""
+        
         switch tabText {
         // Guest types
         case "Classic", "Guest":
