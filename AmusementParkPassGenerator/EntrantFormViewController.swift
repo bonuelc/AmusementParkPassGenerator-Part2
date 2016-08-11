@@ -41,6 +41,9 @@ class EntrantFormViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // sets var entrant: EntrantType! so it's never nil
+        entrantSubtypeTapped(subtypeTab0)
 
         enableTextFields(projectNumberTextField, companyTextField, enabled: false)
         
