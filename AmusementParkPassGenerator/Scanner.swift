@@ -38,9 +38,12 @@ enum Access {
 
 class Scanner {
     
-    static var sound: SystemSoundID = 0
+    static let sharedInstance = Scanner()
+    private init() {}
     
-    static func scan(entrant: EntrantType, accessType: AccessType) -> Bool {
+    var sound: SystemSoundID = 0
+    
+    func scan(entrant: EntrantType, accessType: AccessType) -> Bool {
         
         if let birthdayPerson = entrant as? BirthdayWishable {
             if NSDate.isTodayAnniversary(birthdayPerson.dateOfBirth) {
@@ -86,7 +89,7 @@ class Scanner {
         return accessGranted
     }
     
-    static func playSound(url: NSURL) {
+    func playSound(url: NSURL) {
         AudioServicesCreateSystemSoundID(url, &sound)
         AudioServicesPlaySystemSound(sound)
     }
