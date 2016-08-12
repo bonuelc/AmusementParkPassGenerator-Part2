@@ -40,7 +40,7 @@ class Scanner {
     
     static var sound: SystemSoundID = 0
     
-    static func scan(entrant: EntrantType, accessType: AccessType) {
+    static func scan(entrant: EntrantType, accessType: AccessType) -> Bool {
         
         if let birthdayPerson = entrant as? BirthdayWishable {
             if NSDate.isTodayAnniversary(birthdayPerson.dateOfBirth) {
@@ -82,6 +82,8 @@ class Scanner {
             print("Access to \(accessType) is denied")
             playSound(Access.Denied.url)
         }
+        
+        return accessGranted
     }
     
     static func playSound(url: NSURL) {
