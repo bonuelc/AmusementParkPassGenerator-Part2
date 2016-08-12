@@ -98,6 +98,10 @@ class Scanner {
             playSound(Access.Denied.url)
         }
         
+        if var person = entrant as? VisitDateable {
+            person.dateOfVisit = NSDate()
+        }
+        
         return accessGranted
     }
     
