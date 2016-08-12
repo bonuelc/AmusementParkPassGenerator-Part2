@@ -53,14 +53,30 @@ class EntrantPassViewController: UIViewController {
             return
         }
         
+        var accessType: AccessType?
+        
         switch buttonText {
         // show sub-access-type buttons
         case "Area Access": labelAccessButtons("Amusement", "Kitchen", "Ride Control", "Maintenance", "Office")
         case "Ride Access": labelAccessButtons("All Rides", "Skip Line")
         case "Discount Access": labelAccessButtons("Food", "Merchandise")
+        // scan entrant for access
+        case "Amusement": accessType = .AmusementAreas
+        case "Kitchen": accessType = .KitchenAreas
+        case "Ride Control": accessType = .RideControlAreas
+        case "Maintenance": accessType = .MaintenanceAreas
+        case "Office": accessType = .OfficeAreas
+        case "All Rides": accessType = .AllRides
+        case "Skip Line": accessType = .SkipRideLines
+        case "Food": accessType = .FoodDiscount
+        case "Merchandise": accessType = .MerchandiseDiscount
         default:
             print("Button not recognized")
             return
+        }
+        
+        if let accessType = accessType {
+            let accessGranted = scanner.scan(entrant, accessType: accessType)
         }
     }
     
