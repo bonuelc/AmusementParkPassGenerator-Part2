@@ -79,10 +79,8 @@ class Scanner {
         }
         
         if accessGranted {
-            print("Access to \(accessType) is granted")
             playSound(Access.Granted.url)
         } else {
-            print("Access to \(accessType) is denied")
             playSound(Access.Denied.url)
         }
         
