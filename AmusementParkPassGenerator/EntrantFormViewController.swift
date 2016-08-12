@@ -63,10 +63,6 @@ class EntrantFormViewController: UIViewController {
             subtypeTab4
         ]
     }
-
-    func scan(entrant: EntrantType, accessType: AccessType) {
-        Scanner.scan(entrant, accessType: accessType)
-    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let epVC = segue.destinationViewController as? EntrantPassViewController {
