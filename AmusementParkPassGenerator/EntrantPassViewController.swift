@@ -27,6 +27,7 @@ class EntrantPassViewController: UIViewController {
     var entrant: EntrantType!
     var passDescription: String!
     var perks: [String] = []
+    let scanner = Scanner.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
