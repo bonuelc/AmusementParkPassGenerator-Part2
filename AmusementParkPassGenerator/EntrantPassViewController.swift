@@ -47,6 +47,21 @@ class EntrantPassViewController: UIViewController {
     }
     
     @IBAction func accessButtonTapped(sender: UIButton) {
+        
+        guard let buttonText = sender.titleLabel?.text else {
+            print("Button doesn't have any text")
+            return
+        }
+        
+        switch buttonText {
+        // show sub-access-type buttons
+        case "Area Access": labelAccessButtons("Amusement", "Kitchen", "Ride Control", "Maintenance", "Office")
+        case "Ride Access": labelAccessButtons("All Rides", "Skip Line")
+        case "Discount Access": labelAccessButtons("Food", "Merchandise")
+        default:
+            print("Button not recognized")
+            return
+        }
     }
     
     // MARK: Helper methods
