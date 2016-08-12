@@ -488,6 +488,9 @@
                                         <state key="normal" title="Area Access">
                                             <color key="titleColor" red="0.28235294119999998" green="0.51764705879999995" blue="0.48627450979999998" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="accessButtonTapped:" destination="SKL-8G-Idd" eventType="touchUpInside" id="R0r-bI-weW"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KCH-cS-m52">
                                         <rect key="frame" x="248" y="0.0" width="227" height="55"/>
@@ -496,6 +499,9 @@
                                         <state key="normal" title="Ride Access">
                                             <color key="titleColor" red="0.28235294119999998" green="0.51764705879999995" blue="0.48627450979999998" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="accessButtonTapped:" destination="SKL-8G-Idd" eventType="touchUpInside" id="MGB-GS-ckY"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ReM-O0-RyF">
                                         <rect key="frame" x="495" y="0.0" width="228" height="55"/>
@@ -504,6 +510,9 @@
                                         <state key="normal" title="Discount Access">
                                             <color key="titleColor" red="0.28235294119999998" green="0.51764705879999995" blue="0.48627450979999998" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="accessButtonTapped:" destination="SKL-8G-Idd" eventType="touchUpInside" id="mwW-d2-32a"/>
+                                        </connections>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ir5-Q3-zr8">
                                         <rect key="frame" x="733" y="0.0" width="0.0" height="55"/>
@@ -512,6 +521,9 @@
                                         <state key="normal" title="Maintenance">
                                             <color key="titleColor" red="0.28235294119999998" green="0.51764705879999995" blue="0.48627450979999998" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="accessButtonTapped:" destination="SKL-8G-Idd" eventType="touchUpInside" id="mGZ-1M-UuX"/>
+                                        </connections>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FlB-7j-1uB">
                                         <rect key="frame" x="733" y="0.0" width="0.0" height="55"/>
@@ -520,6 +532,9 @@
                                         <state key="normal" title="Office">
                                             <color key="titleColor" red="0.28235294119999998" green="0.51764705879999995" blue="0.48627450979999998" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="accessButtonTapped:" destination="SKL-8G-Idd" eventType="touchUpInside" id="1D8-tX-cRU"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>

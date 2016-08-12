@@ -45,6 +45,9 @@ class EntrantPassViewController: UIViewController {
         dismissViewControllerAnimated(true, completion: nil)
     }
     
+    @IBAction func accessButtonTapped(sender: UIButton) {
+    }
+    
     // MARK: Helper methods
     
     func configurePass() {
