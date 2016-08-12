@@ -8,13 +8,27 @@
 
 import AudioToolbox
 
-enum AccessType: String {
+enum AccessType {
     // Area Access
     case AmusementAreas, KitchenAreas, RideControlAreas, MaintenanceAreas, OfficeAreas
     // Ride Access
     case AllRides, SkipRideLines
     // Discount Access
-    case FoodDiscount, MerchandiseDiscount
+    case FoodDiscount(Int), MerchandiseDiscount(Int)
+    
+    var description: String {
+        switch self {
+        case .AmusementAreas: return "amusement areas"
+        case .KitchenAreas: return "kitchen areas"
+        case .RideControlAreas: return "ride control areas"
+        case .MaintenanceAreas: return "maintenance areas"
+        case .OfficeAreas: return "office areas"
+        case .AllRides: return "all rides"
+        case .SkipRideLines: return "skip ride lines"
+        case .FoodDiscount(let discount): return (discount > 0) ? "\(discount)% food discount" : "food discount"
+        case .MerchandiseDiscount(let discount): return (discount > 0) ? "\(discount)% discount" : "merchandise discount"
+        }
+    }
 }
 
 

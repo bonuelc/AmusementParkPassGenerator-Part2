@@ -70,8 +70,18 @@ class EntrantPassViewController: UIViewController {
         case "Office": accessType = .OfficeAreas
         case "All Rides": accessType = .AllRides
         case "Skip Line": accessType = .SkipRideLines
-        case "Food": accessType = .FoodDiscount
-        case "Merchandise": accessType = .MerchandiseDiscount
+        case "Food":
+            if let person = entrant as? FoodDiscountAccessible {
+                accessType = .FoodDiscount(person.foodDiscountPercent)
+            } else {
+                accessType = .FoodDiscount(0)
+            }
+        case "Merchandise":
+            if let person = entrant as? MerchandiseDiscountAccessible {
+                accessType = .MerchandiseDiscount(person.merchandiseDiscountPercent)
+            } else {
+                accessType = .MerchandiseDiscount(0)
+            }
         default:
             print("Button not recognized")
             return
@@ -94,10 +104,10 @@ class EntrantPassViewController: UIViewController {
         
         if accessGranted {
             testResultsLabel.backgroundColor = UIColor(red: 72.0/255.0, green: 132.0/255.0, blue: 124.0/255.0, alpha: 1.0)
-            testResultsLabel.text = "Access to \(accessType) is granted"
+            testResultsLabel.text = "Access to \(accessType.description) is granted"
         } else {
             testResultsLabel.backgroundColor = UIColor(red: 228.0/255.0, green: 0.0/255.0, blue: 74.0/255.0, alpha: 1.0)
-            testResultsLabel.text = "Access to \(accessType) is denied"
+            testResultsLabel.text = "Access to \(accessType.description) is denied"
         }
     }
     
