@@ -41,7 +41,7 @@ class Scanner {
     static let sharedInstance = Scanner()
     private init() {}
     
-    var sound: SystemSoundID = 0
+    private var sound: SystemSoundID = 0
     
     func scan(entrant: EntrantType, accessType: AccessType) -> Bool {
         
@@ -89,7 +89,7 @@ class Scanner {
         return accessGranted
     }
     
-    func playSound(url: NSURL) {
+    private func playSound(url: NSURL) {
         AudioServicesCreateSystemSoundID(url, &sound)
         AudioServicesPlaySystemSound(sound)
     }
