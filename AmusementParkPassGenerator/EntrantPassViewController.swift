@@ -22,6 +22,8 @@ class EntrantPassViewController: UIViewController {
     @IBOutlet weak var accessButton3: UIButton!
     @IBOutlet weak var accessButton4: UIButton!
     
+    var accessButtons: [UIButton]!
+    
     var entrant: EntrantType!
     var passDescription: String!
     var perks: [String] = []
@@ -29,6 +31,14 @@ class EntrantPassViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configurePass()
+        
+        accessButtons = [
+            accessButton0,
+            accessButton1,
+            accessButton2,
+            accessButton3,
+            accessButton4
+        ]
     }
     
     @IBAction func createNewPassButtonTapped() {
