@@ -81,11 +81,7 @@
 				85DAD28A1D466BF8001E7EF5 /* View */,
 				85DAD28C1D466C01001E7EF5 /* Controller */,
 				852335871D3DDFD600E195C4 /* Audio */,
-				85DAD2911D46A93D001E7EF5 /* Images */,
 				85B5E8801D395F550083CA31 /* AppDelegate.swift */,
-				85B5E8841D395F550083CA31 /* Main.storyboard */,
-				85B5E8871D395F560083CA31 /* Assets.xcassets */,
-				85B5E8891D395F560083CA31 /* LaunchScreen.storyboard */,
 				85B5E88C1D395F560083CA31 /* Info.plist */,
 			);
 			path = AmusementParkPassGenerator;
@@ -94,7 +90,10 @@
 		85DAD28A1D466BF8001E7EF5 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				85B5E8821D395F550083CA31 /* EntrantFormViewController.swift */,
+				85B5E8841D395F550083CA31 /* Main.storyboard */,
+				85B5E8891D395F560083CA31 /* LaunchScreen.storyboard */,
+				85B5E8871D395F560083CA31 /* Assets.xcassets */,
+				85DAD2911D46A93D001E7EF5 /* Images */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -104,6 +103,7 @@
 			children = (
 				857209721D513E6F004A4EF0 /* DummyEntrantFactory.swift */,
 				85B5E8921D3974610083CA31 /* EntrantModel.swift */,
+				852335811D3D6ED700E195C4 /* Scanner.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -111,7 +111,7 @@
 		85DAD28C1D466C01001E7EF5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				852335811D3D6ED700E195C4 /* Scanner.swift */,
+				85B5E8821D395F550083CA31 /* EntrantFormViewController.swift */,
 				850874751D53E45900531229 /* EntrantPassViewController.swift */,
 			);
 			name = Controller;
