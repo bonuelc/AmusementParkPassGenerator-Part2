@@ -565,6 +565,11 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <connections>
+                        <outlet property="accessButton0" destination="T82-Wh-745" id="3dz-5k-fu9"/>
+                        <outlet property="accessButton1" destination="KCH-cS-m52" id="98y-gz-WUg"/>
+                        <outlet property="accessButton2" destination="ReM-O0-RyF" id="3qs-L7-OAR"/>
+                        <outlet property="accessButton3" destination="Ir5-Q3-zr8" id="mde-cT-cPz"/>
+                        <outlet property="accessButton4" destination="FlB-7j-1uB" id="aod-l3-mou"/>
                         <outlet property="header0Label" destination="3bu-8y-fdA" id="s0h-bt-Tta"/>
                         <outlet property="header1Label" destination="0jO-Ah-z0z" id="Req-MR-KPs"/>
                         <outlet property="perk0Label" destination="fZc-ta-tsR" id="DRh-i7-xbF"/>

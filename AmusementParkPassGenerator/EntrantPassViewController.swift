@@ -16,6 +16,12 @@ class EntrantPassViewController: UIViewController {
     @IBOutlet weak var perk1Label: UILabel!
     @IBOutlet weak var perk0Label: UILabel!
     
+    @IBOutlet weak var accessButton0: UIButton!
+    @IBOutlet weak var accessButton1: UIButton!
+    @IBOutlet weak var accessButton2: UIButton!
+    @IBOutlet weak var accessButton3: UIButton!
+    @IBOutlet weak var accessButton4: UIButton!
+    
     var entrant: EntrantType!
     var passDescription: String!
     var perks: [String] = []
