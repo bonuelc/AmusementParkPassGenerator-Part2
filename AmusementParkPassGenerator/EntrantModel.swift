@@ -111,7 +111,8 @@ struct FullAddress {
             throw FullAddressError.EmptyZipCode
         }
         
-        guard let zipCode = Int(zipCode) else {
+        // 5-digit integer
+        guard let zipCode = Int(zipCode) where zipCode >= 10000 && zipCode < 100000 else {
             throw FullAddressError.InvalidZipCode
         }
         
