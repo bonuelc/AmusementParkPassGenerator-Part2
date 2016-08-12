@@ -78,11 +78,26 @@ class EntrantPassViewController: UIViewController {
         }
         
         if let accessType = accessType {
-            let accessGranted = scanner.scan(entrant, accessType: accessType)
+            showAccessResult(accessType)
         }
     }
     
     // MARK: Helper methods
+    
+    func showAccessResult(accessType: AccessType) {
+        
+        let accessGranted = scanner.scan(entrant, accessType: accessType)
+        
+        testResultsLabel.textColor = UIColor.whiteColor()
+        
+        if accessGranted {
+            testResultsLabel.backgroundColor = UIColor(red: 72.0/255.0, green: 132.0/255.0, blue: 124.0/255.0, alpha: 1.0)
+            testResultsLabel.text = "Access to \(accessType) is granted"
+        } else {
+            testResultsLabel.backgroundColor = UIColor(red: 228.0/255.0, green: 0.0/255.0, blue: 74.0/255.0, alpha: 1.0)
+            testResultsLabel.text = "Access to \(accessType) is denied"
+        }
+    }
     
     func configurePass() {
         setHeaders()
