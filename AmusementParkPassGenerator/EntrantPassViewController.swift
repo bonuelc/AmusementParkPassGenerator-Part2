@@ -79,6 +79,8 @@ class EntrantPassViewController: UIViewController {
         
         if let accessType = accessType {
             showAccessResult(accessType)
+            // show original access buttons
+            labelAccessButtons("Area Access", "Ride Access", "Discount Access")
         }
     }
     
