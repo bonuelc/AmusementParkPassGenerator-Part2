@@ -590,6 +590,7 @@
                         <outlet property="perk0Label" destination="fZc-ta-tsR" id="DRh-i7-xbF"/>
                         <outlet property="perk1Label" destination="5IO-HR-CHT" id="GZ4-ev-1Mc"/>
                         <outlet property="perk2Label" destination="QoW-yp-heB" id="QW1-Vi-LnB"/>
+                        <outlet property="testResultsLabel" destination="Ued-Jo-lOi" id="4d1-U0-oU0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dWA-Db-jqa" userLabel="First Responder" sceneMemberID="firstResponder"/>

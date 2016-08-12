@@ -22,6 +22,8 @@ class EntrantPassViewController: UIViewController {
     @IBOutlet weak var accessButton3: UIButton!
     @IBOutlet weak var accessButton4: UIButton!
     
+    @IBOutlet weak var testResultsLabel: UILabel!
+    
     var accessButtons: [UIButton]!
     
     var entrant: EntrantType!
