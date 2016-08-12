@@ -90,4 +90,21 @@ class EntrantPassViewController: UIViewController {
         perk1Label.text = perks[1]
         perk0Label.text = perks[0]
     }
+    
+    func showAccessButtons(count: Int) {
+        for i in 0..<count {
+            accessButtons[i].hidden = false
+        }
+        
+        for i in count..<accessButtons.count {
+            accessButtons[i].hidden = true
+        }
+    }
+    
+    func labelAccessButtons(labels: String...) {
+        for (index, label) in labels.enumerate() {
+            accessButtons[index].setTitle("\(label)", forState: .Normal)
+        }
+        showAccessButtons(labels.count)
+    }
 }
